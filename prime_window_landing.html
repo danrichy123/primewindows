@@ -504,9 +504,9 @@
 
 			/* Trust Badges */
 			.trust-section {
-				background: var(--white);
+				background: #f8fafc;
 				padding: 50px 20px;
-				border-bottom: 1px solid #f0f0f0;
+				border-bottom: 1px solid #e2e8f0;
 			}
 
 			.trust-content {
@@ -562,7 +562,7 @@
 			/* Services Section */
 			.services {
 				padding: 120px 20px;
-				background: linear-gradient(180deg, #f8fafc 0%, var(--white) 100%);
+				background: var(--white);
 			}
 
 			.services-content {
@@ -672,7 +672,7 @@
 			/* Why Choose Us */
 			.why-choose {
 				padding: 120px 20px;
-				background: var(--white);
+				background: #f1f5f9;
 			}
 
 			.why-choose-content {
@@ -750,7 +750,7 @@
 			/* Process Section */
 			.process {
 				padding: 120px 20px;
-				background: linear-gradient(180deg, var(--white) 0%, #f8fafc 100%);
+				background: var(--white);
 			}
 
 			.process-content {
@@ -801,7 +801,7 @@
 			/* Testimonials */
 			.testimonials {
 				padding: 120px 20px;
-				background: var(--white);
+				background: #f8fafc;
 			}
 
 			.testimonials-content {
@@ -1084,6 +1084,106 @@
 				}
 			}
 
+			/* Before & After Gallery */
+			.gallery {
+				padding: 120px 20px;
+				background: #f1f5f9;
+			}
+
+			.gallery-content {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
+
+			.gallery-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+				gap: 40px;
+				margin-top: 80px;
+			}
+
+			.gallery-item {
+				background: var(--white);
+				border-radius: 16px;
+				overflow: hidden;
+				box-shadow: var(--shadow-md);
+				transition: all 0.3s ease;
+				border: 1px solid #e2e8f0;
+			}
+
+			.gallery-item:hover {
+				transform: translateY(-8px);
+				box-shadow: var(--shadow-lg);
+				border-color: var(--primary-color);
+			}
+
+			.gallery-comparison {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 15px;
+				padding: 15px;
+			}
+
+			.gallery-image-container {
+				position: relative;
+				height: 250px;
+				border-radius: 12px;
+				overflow: hidden;
+				background: #f0f0f0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.gallery-image-container img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.gallery-image-placeholder {
+				color: var(--text-light);
+				font-size: 14px;
+				font-weight: 600;
+				text-align: center;
+			}
+
+			.gallery-label {
+				position: absolute;
+				top: 12px;
+				left: 12px;
+				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				color: var(--secondary-color);
+				padding: 6px 14px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 700;
+				z-index: 10;
+			}
+
+			.gallery-item-title {
+				padding: 15px;
+				text-align: center;
+				border-top: 1px solid #f0f0f0;
+			}
+
+			.gallery-item-title h4 {
+				font-size: 18px;
+				color: var(--secondary-color);
+				font-weight: 700;
+				margin: 0;
+			}
+
+			@media (max-width: 640px) {
+				.gallery-comparison {
+					grid-template-columns: 1fr;
+				}
+
+				.gallery-image-container {
+					height: 200px;
+				}
+			}
+
 			@media (max-width: 640px) {
 				.hero-text h1 {
 					font-size: 32px;
@@ -1243,7 +1343,7 @@
 						<div
 							class="service-image"
 							style="
-								background-image: url(&quot;https://media.istockphoto.com/id/162353030/photo/window-cleaning.jpg?s=612x612&w=0&k=20&c=3wPwMDkOmDv6qOtGIgqGIMxvKF7teQ6n6FBGg97R5Hs=&quot;);
+								background-image: url(&quot;img/service_tilesg&quot;);
 								background-size: cover;
 								background-position: center;
 							"
@@ -1258,7 +1358,14 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image"></div>
+						<div
+							class="service-image"
+							style="
+								background-image: url(&quot;img/service_tiles/Commercial_Window_Cleaning.png&quot;);
+								background-size: cover;
+								background-position: center;
+							"
+						></div>
 						<div class="service-content">
 							<h3>Commercial Window Cleaning</h3>
 							<p>
@@ -1269,7 +1376,14 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image"></div>
+						<div
+							class="service-image"
+							style="
+								background-image: url(&quot;img/service_tiles/Gutter_Cleaning_Protection.png&quot;);
+								background-size: cover;
+								background-position: center;
+							"
+						></div>
 						<div class="service-content">
 							<h3>Gutter Cleaning & Protection</h3>
 							<p>
@@ -1280,7 +1394,14 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image"></div>
+						<div
+							class="service-image"
+							style="
+								background-image: url(&quot;img/service_tiles/Pressure_Washing.png&quot;);
+								background-size: cover;
+								background-position: center;
+							"
+						></div>
 						<div class="service-content">
 							<h3>Pressure Washing</h3>
 							<p>
@@ -1479,6 +1600,78 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Before & After Gallery -->
+		<section id="gallery" class="gallery">
+			<div class="gallery-content">
+				<div class="section-header">
+					<h2>See the Difference</h2>
+					<p>Real before and after transformations from satisfied customers</p>
+				</div>
+				<div class="gallery-grid">
+					<div class="gallery-item">
+						<div class="gallery-comparison">
+							<div class="gallery-image-container">
+								<span class="gallery-label">BEFORE</span>
+								<div class="gallery-image-placeholder">
+									Insert before photo here
+								</div>
+							</div>
+							<div class="gallery-image-container">
+								<span class="gallery-label">AFTER</span>
+								<div class="gallery-image-placeholder">
+									Insert after photo here
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item-title">
+							<h4>Residential Example 1</h4>
+						</div>
+					</div>
+					<div class="gallery-item">
+						<div class="gallery-comparison">
+							<div class="gallery-image-container">
+								<span class="gallery-label">BEFORE</span>
+								<div class="gallery-image-placeholder">
+									Insert before photo here
+								</div>
+							</div>
+							<div class="gallery-image-container">
+								<span class="gallery-label">AFTER</span>
+								<div class="gallery-image-placeholder">
+									Insert after photo here
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item-title">
+							<h4>Commercial Example</h4>
+						</div>
+					</div>
+					<div class="gallery-item">
+						<div class="gallery-comparison">
+							<div class="gallery-image-container">
+								<span class="gallery-label">BEFORE</span>
+								<div class="gallery-image-placeholder">
+									Insert before photo here
+								</div>
+							</div>
+							<div class="gallery-image-container">
+								<span class="gallery-label">AFTER</span>
+								<div class="gallery-image-placeholder">
+									Insert after photo here
+								</div>
+							</div>
+						</div>
+						<div class="gallery-item-title">
+							<h4>Residential Example 2</h4>
+						</div>
+					</div>
+				</div>
+				<div style="text-align: center; margin-top: 60px">
+					<a href="" class="btn-primary">View More Gallery</a>
 				</div>
 			</div>
 		</section>
