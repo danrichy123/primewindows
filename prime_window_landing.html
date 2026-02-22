@@ -120,6 +120,10 @@
 			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		/>
 		<style>
 			/* Reset & Root Variables */
 			* {
@@ -914,10 +918,16 @@
 				align-items: center;
 				justify-content: center;
 				margin: 0 auto 25px;
-				font-size: 36px;
+				font-size: 34px;
 				font-weight: 800;
-				color: var(--secondary-color);
+				color: #1a2332;
 				box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+			}
+
+			.step-number i {
+				font-size: 34px;
+				color: #1a2332;
+				line-height: 1;
 			}
 
 			.process-step h3 {
@@ -2074,19 +2084,25 @@
 				</div>
 				<div class="process-steps">
 					<div class="process-step">
-						<div class="step-number">1</div>
+						<div class="step-number">
+							<i class="fa-solid fa-file-invoice-dollar"></i>
+						</div>
 						<h3>Free Quote</h3>
 						<p>
 							Contact us for a free, no-obligation estimate for your property.
 						</p>
 					</div>
 					<div class="process-step">
-						<div class="step-number">2</div>
+						<div class="step-number">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</div>
 						<h3>Assessment</h3>
 						<p>Our team inspects your property and plans the best approach.</p>
 					</div>
 					<div class="process-step">
-						<div class="step-number">3</div>
+						<div class="step-number">
+							<i class="fa-solid fa-spray-can-sparkles"></i>
+						</div>
 						<h3>Professional Cleaning</h3>
 						<p>
 							Expert execution using quality equipment and eco-friendly
@@ -2094,7 +2110,9 @@
 						</p>
 					</div>
 					<div class="process-step">
-						<div class="step-number">4</div>
+						<div class="step-number">
+							<i class="fa-solid fa-clipboard-check"></i>
+						</div>
 						<h3>Final Inspection</h3>
 						<p>
 							We inspect everything to ensure complete satisfaction with
