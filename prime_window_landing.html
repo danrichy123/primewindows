@@ -909,6 +909,19 @@
 				position: relative;
 			}
 
+			.step-badge {
+				display: inline-block;
+				background: #f1f5f9;
+				color: var(--text-light);
+				font-size: 11px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 1.2px;
+				padding: 4px 12px;
+				border-radius: 20px;
+				margin-bottom: 14px;
+			}
+
 			.step-number {
 				width: 90px;
 				height: 90px;
@@ -922,6 +935,12 @@
 				font-weight: 800;
 				color: #1a2332;
 				box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+			}
+
+			.process-step:hover .step-number {
+				transform: translateY(-6px) scale(1.05);
+				box-shadow: 0 22px 45px rgba(255, 193, 7, 0.4);
 			}
 
 			.step-number i {
@@ -1839,7 +1858,7 @@
 				</div>
 				<div class="hero-image">
 					<img
-						src="https://i.ibb.co/PGV746TH/Gemini-Generated-Image-pjsadwpjsadwpjsa-Edited.png"
+						src="old_images/Holding1.jpg"
 						alt="Professional window cleaning service"
 						loading="lazy"
 						decoding="async"
@@ -2084,6 +2103,7 @@
 				</div>
 				<div class="process-steps">
 					<div class="process-step">
+						<span class="step-badge">Step 01</span>
 						<div class="step-number">
 							<i class="fa-solid fa-file-invoice-dollar"></i>
 						</div>
@@ -2093,6 +2113,7 @@
 						</p>
 					</div>
 					<div class="process-step">
+						<span class="step-badge">Step 02</span>
 						<div class="step-number">
 							<i class="fa-solid fa-magnifying-glass"></i>
 						</div>
@@ -2100,6 +2121,7 @@
 						<p>Our team inspects your property and plans the best approach.</p>
 					</div>
 					<div class="process-step">
+						<span class="step-badge">Step 03</span>
 						<div class="step-number">
 							<i class="fa-solid fa-spray-can-sparkles"></i>
 						</div>
@@ -2110,6 +2132,7 @@
 						</p>
 					</div>
 					<div class="process-step">
+						<span class="step-badge">Step 04</span>
 						<div class="step-number">
 							<i class="fa-solid fa-clipboard-check"></i>
 						</div>
@@ -2328,13 +2351,13 @@
 							<div class="gallery-image-container">
 								<span class="gallery-label">BEFORE</span>
 								<div class="gallery-image-placeholder">
-									Insert before photo here
+									<img src="img/before_after_gallery/b4_glass restore.jpg" alt="Before residential window cleaning" />
 								</div>
 							</div>
 							<div class="gallery-image-container">
 								<span class="gallery-label">AFTER</span>
 								<div class="gallery-image-placeholder">
-									Insert after photo here
+									<img src="img/before_after_gallery/b4_glass restore.jpg" alt="After residential window cleaning" />
 								</div>
 							</div>
 						</div>
