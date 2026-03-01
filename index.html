@@ -133,12 +133,12 @@
 			}
 
 			:root {
-				--primary-color: #ffc107;
-				--primary-dark: #ffb300;
-				--secondary-color: #1a2332;
-				--accent-color: #0ea5e9;
+				--primary-color: #C9A227;
+				--primary-dark: #B8911F;
+				--secondary-color: #1E1E1E;
+				--accent-color: #C9A227;
 				--success-color: #10b981;
-				--text-dark: #0f172a;
+				--text-dark: #1E1E1E;
 				--text-light: #64748b;
 				--bg-light: #f8fafc;
 				--bg-lighter: #f1f5f9;
@@ -184,8 +184,8 @@
 			.header-top {
 				background: linear-gradient(
 					135deg,
-					var(--secondary-color) 0%,
-					#0f1923 100%
+					#1E1E1E 0%,
+					#111111 100%
 				);
 				padding: 10px 0;
 				font-size: 13px;
@@ -261,8 +261,14 @@
 				gap: 8px;
 			}
 
+			.logo img {
+				height: 52px;
+				width: auto;
+				display: block;
+			}
+
 			.logo span {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -295,7 +301,7 @@
 				height: 3px;
 				bottom: -8px;
 				left: 0;
-				background: linear-gradient(90deg, var(--primary-color), #ffb300);
+				background: linear-gradient(90deg, var(--primary-color), #B8911F);
 				transition: width 0.3s ease;
 				border-radius: 2px;
 			}
@@ -305,7 +311,7 @@
 			}
 
 			.cta-btn {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				padding: 12px 32px;
 				border-radius: 50px;
@@ -316,12 +322,12 @@
 				cursor: pointer;
 				font-size: 14px;
 				letter-spacing: 0.3px;
-				box-shadow: 0 4px 15px rgba(255, 193, 7, 0.25);
+				box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
 			}
 
 			.cta-btn:hover {
 				transform: translateY(-2px);
-				box-shadow: 0 8px 25px rgba(255, 193, 7, 0.35);
+				box-shadow: 0 8px 25px rgba(201, 162, 39, 0.35);
 			}
 
 			.mobile-toggle {
@@ -342,7 +348,7 @@
 			.hero {
 				padding-top: 125px;
 				background:
-					linear-gradient(135deg, #1a2332 0%, #0f1923 100%),
+					linear-gradient(135deg, #1E1E1E 0%, #111111 100%),
 					url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80");
 				background-size: cover;
 				background-position: center;
@@ -362,7 +368,7 @@
 				bottom: 0;
 				background: radial-gradient(
 					ellipse at 20% 50%,
-					rgba(255, 193, 7, 0.1) 0%,
+					rgba(201, 162, 39, 0.1) 0%,
 					transparent 50%
 				);
 				pointer-events: none;
@@ -389,7 +395,7 @@
 			}
 
 			.hero-text h1 span {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -411,7 +417,7 @@
 			}
 
 			.btn-primary {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				padding: 16px 48px;
 				border-radius: 50px;
@@ -422,13 +428,13 @@
 				border: none;
 				display: inline-block;
 				letter-spacing: 0.3px;
-				box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+				box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
 				cursor: pointer;
 			}
 
 			.btn-primary:hover {
 				transform: translateY(-3px);
-				box-shadow: 0 15px 35px rgba(255, 193, 7, 0.4);
+				box-shadow: 0 15px 35px rgba(201, 162, 39, 0.4);
 			}
 
 			.btn-secondary {
@@ -490,7 +496,7 @@
 
 			.stat-card h3 {
 				font-size: 42px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -550,7 +556,7 @@
 
 			.badge::before {
 				content: "✓";
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				width: 28px;
 				height: 28px;
@@ -676,7 +682,7 @@
 			/* Why Choose Us */
 			.why-choose {
 				padding: 0;
-				background: linear-gradient(135deg, #0f1923 0%, #1a2d40 60%, #0f1923 100%);
+				background: linear-gradient(135deg, #111111 0%, #1E1E1E 60%, #111111 100%);
 				position: relative;
 				overflow: hidden;
 			}
@@ -686,7 +692,7 @@
 				position: absolute;
 				top: -200px; left: -200px;
 				width: 600px; height: 600px;
-				background: radial-gradient(circle, rgba(255,193,7,0.07) 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(201,162,39,0.07) 0%, transparent 70%);
 				pointer-events: none;
 			}
 
@@ -695,7 +701,7 @@
 				position: absolute;
 				bottom: -150px; right: -150px;
 				width: 500px; height: 500px;
-				background: radial-gradient(circle, rgba(14,165,233,0.06) 0%, transparent 70%);
+				background: radial-gradient(circle, rgba(201,162,39,0.06) 0%, transparent 70%);
 				pointer-events: none;
 			}
 
@@ -743,7 +749,7 @@
 			}
 
 			.why-about h2 span {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -760,7 +766,7 @@
 				display: inline-flex;
 				align-items: center;
 				gap: 10px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				padding: 15px 36px;
 				border-radius: 50px;
@@ -769,13 +775,13 @@
 				text-decoration: none;
 				margin-top: 32px;
 				transition: all 0.3s ease;
-				box-shadow: 0 8px 24px rgba(255,193,7,0.3);
+				box-shadow: 0 8px 24px rgba(201,162,39,0.3);
 				width: fit-content;
 			}
 
 			.why-cta:hover {
 				transform: translateY(-3px);
-				box-shadow: 0 14px 32px rgba(255,193,7,0.4);
+				box-shadow: 0 14px 32px rgba(201,162,39,0.4);
 			}
 
 			.why-cta-arrow {
@@ -861,7 +867,7 @@
 			.feature-icon {
 				width: 46px;
 				height: 46px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				border-radius: 12px;
 				display: flex;
 				align-items: center;
@@ -869,7 +875,7 @@
 				color: var(--secondary-color);
 				font-size: 20px;
 				flex-shrink: 0;
-				box-shadow: 0 4px 12px rgba(255,193,7,0.25);
+				box-shadow: 0 4px 12px rgba(201,162,39,0.25);
 			}
 
 			.feature-text h4 {
@@ -925,7 +931,7 @@
 			.step-number {
 				width: 90px;
 				height: 90px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				border-radius: 50%;
 				display: flex;
 				align-items: center;
@@ -933,19 +939,19 @@
 				margin: 0 auto 25px;
 				font-size: 34px;
 				font-weight: 800;
-				color: #1a2332;
-				box-shadow: 0 15px 35px rgba(255, 193, 7, 0.25);
+				color: #1E1E1E;
+				box-shadow: 0 15px 35px rgba(201, 162, 39, 0.25);
 				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
 
 			.process-step:hover .step-number {
 				transform: translateY(-6px) scale(1.05);
-				box-shadow: 0 22px 45px rgba(255, 193, 7, 0.4);
+				box-shadow: 0 22px 45px rgba(201, 162, 39, 0.4);
 			}
 
 			.step-number i {
 				font-size: 34px;
-				color: #1a2332;
+				color: #1E1E1E;
 				line-height: 1;
 			}
 
@@ -1105,7 +1111,7 @@
 				width: 50px;
 				height: 50px;
 				border-radius: 50%;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -1164,7 +1170,7 @@
 				height: 10px;
 				border-radius: 50%;
 				background: var(--primary-color);
-				box-shadow: 0 0 0 3px rgba(255,193,7,0.25);
+				box-shadow: 0 0 0 3px rgba(201,162,39,0.25);
 				flex-shrink: 0;
 			}
 
@@ -1216,6 +1222,7 @@
 				box-shadow: 0 20px 60px rgba(0,0,0,0.08);
 				border: 1px solid #e8edf3;
 				position: relative;
+				overflow: visible;
 			}
 
 			.quote-form-header {
@@ -1242,7 +1249,7 @@
 			}
 
 			.quote-form-header h2 span {
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-clip: text;
@@ -1300,11 +1307,292 @@
 			}
 
 			.quote-form-field input:focus,
-			.quote-form-field textarea:focus {
+			.quote-form-field textarea:focus,
+			.quote-form-field select:focus {
 				border-color: var(--primary-color);
-				box-shadow: 0 0 0 3px rgba(255,193,7,0.15);
+				box-shadow: 0 0 0 3px rgba(201,162,39,0.15);
 				background: #ffffff;
 			}
+
+			/* ── Multi-select Services Dropdown ── */
+			.services-multiselect {
+				position: relative;
+				user-select: none;
+				z-index: 100;
+			}
+
+			.services-multiselect-trigger {
+				width: 100%;
+				padding: 13px 16px;
+				border: 1.5px solid #e2e8f0;
+				border-radius: 10px;
+				font-size: 14.5px;
+				font-family: inherit;
+				color: var(--text-dark);
+				background: #fafbfc;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 10px;
+				transition: border-color 0.25s ease, box-shadow 0.25s ease;
+				min-height: 50px;
+			}
+
+			.services-multiselect-trigger:hover,
+			.services-multiselect.open .services-multiselect-trigger {
+				border-color: var(--primary-color);
+				box-shadow: 0 0 0 3px rgba(201,162,39,0.15);
+				background: #ffffff;
+			}
+
+			.services-multiselect-trigger-text {
+				flex: 1;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 6px;
+				align-items: center;
+				min-height: 24px;
+			}
+
+			.services-multiselect-placeholder {
+				color: #b0bac6;
+			}
+
+			.service-tag {
+				display: inline-flex;
+				align-items: center;
+				gap: 5px;
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
+				color: var(--secondary-color);
+				font-size: 12px;
+				font-weight: 700;
+				padding: 4px 10px;
+				border-radius: 20px;
+				white-space: nowrap;
+			}
+
+			.service-tag-remove {
+				cursor: pointer;
+				font-size: 14px;
+				line-height: 1;
+				opacity: 0.75;
+				transition: opacity 0.2s;
+			}
+
+			.service-tag-remove:hover { opacity: 1; }
+
+			.services-multiselect-arrow {
+				font-size: 11px;
+				color: var(--text-light);
+				transition: transform 0.25s ease;
+				flex-shrink: 0;
+			}
+
+			.services-multiselect.open .services-multiselect-arrow {
+				transform: rotate(180deg);
+			}
+
+			.services-multiselect-dropdown {
+				display: none;
+				position: absolute;
+				top: calc(100% + 6px);
+				left: 0;
+				right: 0;
+				background: #ffffff;
+				border: 1.5px solid #e2e8f0;
+				border-radius: 12px;
+				box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+				z-index: 9999;
+				overflow: hidden;
+				max-height: 320px;
+				overflow-y: auto;
+			}
+
+			.services-multiselect.open .services-multiselect-dropdown {
+				display: block;
+			}
+
+			.services-multiselect-option {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				padding: 13px 16px;
+				cursor: pointer;
+				font-size: 14.5px;
+				color: var(--text-dark);
+				transition: background 0.15s ease;
+				border-bottom: 1px solid #f1f5f9;
+			}
+
+			.services-multiselect-option:last-child { border-bottom: none; }
+
+			.services-multiselect-option:hover {
+				background: #fdf8ec;
+			}
+
+			.services-multiselect-option.selected {
+				background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(184,145,31,0.06));
+			}
+
+			.services-multiselect-option .opt-checkbox {
+				width: 18px;
+				height: 18px;
+				border: 2px solid #cbd5e1;
+				border-radius: 5px;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.2s ease;
+				background: #fff;
+			}
+
+			.services-multiselect-option.selected .opt-checkbox {
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
+				border-color: var(--primary-color);
+			}
+
+			.services-multiselect-option.selected .opt-checkbox::after {
+				content: "✓";
+				color: var(--secondary-color);
+				font-size: 11px;
+				font-weight: 800;
+			}
+
+			.opt-icon { font-size: 18px; flex-shrink: 0; }
+			.opt-label { font-weight: 500; }
+
+			/* ── Drag & Drop File Upload ── */
+			.file-upload-zone {
+				border: 2px dashed #d1d9e0;
+				border-radius: 12px;
+				padding: 28px 20px;
+				text-align: center;
+				cursor: pointer;
+				transition: all 0.25s ease;
+				background: #fafbfc;
+				position: relative;
+			}
+
+			.file-upload-zone:hover,
+			.file-upload-zone.drag-over {
+				border-color: var(--primary-color);
+				background: #fdf8ec;
+				box-shadow: 0 0 0 3px rgba(201,162,39,0.12);
+			}
+
+			.file-upload-zone input[type="file"] {
+				position: absolute;
+				inset: 0;
+				opacity: 0;
+				cursor: pointer;
+				width: 100%;
+				height: 100%;
+			}
+
+			.file-upload-icon {
+				font-size: 36px;
+				margin-bottom: 10px;
+				display: block;
+				transition: transform 0.2s ease;
+			}
+
+			.file-upload-zone:hover .file-upload-icon,
+			.file-upload-zone.drag-over .file-upload-icon {
+				transform: translateY(-4px);
+			}
+
+			.file-upload-title {
+				font-size: 15px;
+				font-weight: 700;
+				color: var(--secondary-color);
+				margin-bottom: 5px;
+			}
+
+			.file-upload-subtitle {
+				font-size: 12.5px;
+				color: var(--text-light);
+			}
+
+			.file-upload-subtitle span {
+				color: var(--primary-color);
+				font-weight: 700;
+			}
+
+			.file-upload-types {
+				display: flex;
+				gap: 6px;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-top: 12px;
+			}
+
+			.file-type-badge {
+				background: #f1f5f9;
+				color: var(--text-light);
+				font-size: 11px;
+				font-weight: 700;
+				padding: 3px 9px;
+				border-radius: 20px;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			.file-preview-list {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				margin-top: 14px;
+			}
+
+			.file-preview-item {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				background: #ffffff;
+				border: 1px solid #e2e8f0;
+				border-radius: 8px;
+				padding: 9px 12px;
+				font-size: 13px;
+				color: var(--text-dark);
+				animation: fileSlideIn 0.2s ease;
+			}
+
+			@keyframes fileSlideIn {
+				from { opacity: 0; transform: translateY(-6px); }
+				to   { opacity: 1; transform: translateY(0); }
+			}
+
+			.file-preview-icon { font-size: 18px; flex-shrink: 0; }
+
+			.file-preview-name {
+				flex: 1;
+				font-weight: 600;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+			.file-preview-size {
+				color: var(--text-light);
+				font-size: 11.5px;
+				flex-shrink: 0;
+			}
+
+			.file-preview-remove {
+				cursor: pointer;
+				color: #94a3b8;
+				font-size: 16px;
+				flex-shrink: 0;
+				transition: color 0.2s;
+				background: none;
+				border: none;
+				line-height: 1;
+				padding: 0;
+			}
+
+			.file-preview-remove:hover { color: #e53e3e; }
 
 			.quote-submit-btn {
 				display: flex;
@@ -1313,7 +1601,7 @@
 				gap: 10px;
 				width: 100%;
 				padding: 16px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				font-family: inherit;
 				font-size: 16px;
@@ -1322,13 +1610,13 @@
 				border-radius: 12px;
 				cursor: pointer;
 				transition: all 0.3s ease;
-				box-shadow: 0 8px 24px rgba(255,193,7,0.3);
+				box-shadow: 0 8px 24px rgba(201,162,39,0.3);
 				margin-top: 4px;
 			}
 
 			.quote-submit-btn:hover {
 				transform: translateY(-2px);
-				box-shadow: 0 14px 32px rgba(255,193,7,0.4);
+				box-shadow: 0 14px 32px rgba(201,162,39,0.4);
 			}
 
 			.quote-btn-icon {
@@ -1375,7 +1663,7 @@
 			.quote-success-icon {
 				width: 64px;
 				height: 64px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				border-radius: 50%;
 				display: flex;
 				align-items: center;
@@ -1383,7 +1671,7 @@
 				font-size: 28px;
 				font-weight: 800;
 				color: var(--secondary-color);
-				box-shadow: 0 8px 24px rgba(255,193,7,0.3);
+				box-shadow: 0 8px 24px rgba(201,162,39,0.3);
 			}
 
 			.quote-success h3 {
@@ -1416,7 +1704,7 @@
 			/* CTA Section */
 			.cta-section {
 				background:
-					linear-gradient(135deg, var(--secondary-color) 0%, #0f1923 100%),
+					linear-gradient(135deg, #1E1E1E 0%, #111111 100%),
 					url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80");
 				background-size: cover;
 				background-position: center;
@@ -1437,7 +1725,7 @@
 				bottom: 0;
 				background: radial-gradient(
 					ellipse at 50% 50%,
-					rgba(255, 193, 7, 0.08) 0%,
+					rgba(201, 162, 39, 0.08) 0%,
 					transparent 70%
 				);
 				pointer-events: none;
@@ -1466,20 +1754,20 @@
 
 			.guarantee-badge {
 				display: inline-block;
-				background: rgba(255, 193, 7, 0.15);
+				background: rgba(201, 162, 39, 0.15);
 				backdrop-filter: blur(10px);
 				padding: 20px 40px;
 				border-radius: 50px;
 				margin-top: 30px;
-				border: 2px solid rgba(255, 193, 7, 0.3);
+				border: 2px solid rgba(201, 162, 39, 0.3);
 				font-weight: 700;
 				color: var(--primary-color);
 				transition: all 0.3s ease;
 			}
 
 			.guarantee-badge:hover {
-				background: rgba(255, 193, 7, 0.25);
-				border-color: rgba(255, 193, 7, 0.5);
+				background: rgba(201, 162, 39, 0.25);
+				border-color: rgba(201, 162, 39, 0.5);
 				transform: translateY(-2px);
 			}
 
@@ -1487,8 +1775,8 @@
 			footer {
 				background: linear-gradient(
 					135deg,
-					var(--secondary-color) 0%,
-					#0f1923 100%
+					#1E1E1E 0%,
+					#111111 100%
 				);
 				color: var(--white);
 				padding: 60px 20px 30px;
@@ -1708,7 +1996,7 @@
 				position: absolute;
 				top: 12px;
 				left: 12px;
-				background: linear-gradient(135deg, var(--primary-color), #ffb300);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
 				color: var(--secondary-color);
 				padding: 6px 14px;
 				border-radius: 20px;
@@ -1812,7 +2100,7 @@
 				</div>
 			</div>
 			<nav>
-				<a href="/" class="logo">Prime<span>Windows</span></a>
+				<a href="/" class="logo"><img src="img/logo.png" alt="Prime Window Cleaning Co." style="height:52px;width:auto;display:block;" /></a>
 				<ul class="nav-menu" id="navMenu">
 					<li><a href="#services">Services</a></li>
 					<li><a href="#why-us">Why Choose Us</a></li>
@@ -1832,7 +2120,7 @@
 		<section id="hero" class="hero">
 			<div class="hero-content">
 				<div class="hero-text">
-					<h1>Crystal Clear <span>Windows</span> for a Perfect View</h1>
+					<h1>Prime <span>Windows</span> for a Perfect View</h1>
 					<p>
 						Professional window cleaning, gutter care, and property maintenance
 						services for Brooklyn & NYC. Trusted by thousands since 2002.
@@ -1856,13 +2144,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero-image">
-					<img
-						src="old_images/Holding1.jpg"
-						alt="Professional window cleaning service"
-						loading="lazy"
-						decoding="async"
-					/>
+				<div class="hero-image" style="display:flex;align-items:center;justify-content:center;background:rgba(201,162,39,0.08);border:2px solid rgba(201,162,39,0.2);">
+					<div style="text-align:center;color:rgba(255,255,255,0.6);">
+						<div style="font-size:80px;margin-bottom:16px;">🪟</div>
+						<div style="font-size:16px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Prime Window Cleaning</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -1895,14 +2181,9 @@
 				</div>
 				<div class="services-grid">
 					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Residential_Window_Cleaning.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🏠</span>
+						</div>
 						<div class="service-content">
 							<h3>Residential Window Cleaning</h3>
 							<p>
@@ -1913,50 +2194,22 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Commercial_Window_Cleaning.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🏢</span>
+						</div>
 						<div class="service-content">
 							<h3>Commercial Window Cleaning</h3>
 							<p>
-								Professional solutions for offices, storefronts, and high-rise
-								buildings. Maintain pristine appearance.
+								Professional solutions for offices, storefronts, and buildings.
+								Maintain a pristine appearance that impresses clients.
 							</p>
 							<a href="#contact" class="service-link">Learn More →</a>
 						</div>
 					</div>
 					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Gutter_Cleaning_Protection.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
-						<div class="service-content">
-							<h3>Gutter Cleaning & Protection</h3>
-							<p>
-								Prevent water damage with thorough gutter cleaning. Install
-								gutter protection for year-round performance.
-							</p>
-							<a href="#contact" class="service-link">Learn More →</a>
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">💦</span>
 						</div>
-					</div>
-					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Pressure_Washing.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
 						<div class="service-content">
 							<h3>Pressure Washing</h3>
 							<p>
@@ -1967,37 +2220,66 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Glass_Restoration.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🔧</span>
+						</div>
 						<div class="service-content">
-							<h3>Glass Restoration</h3>
+							<h3>Repair and Replacement</h3>
 							<p>
-								Bring cloudy or stained glass back to life. Remove hard water
-								stains, oxidation, and scratches.
+								Expert window repair and full replacement services. From broken
+								seals to complete frame and glass replacement.
 							</p>
 							<a href="#contact" class="service-link">Learn More →</a>
 						</div>
 					</div>
 					<div class="service-card">
-						<div
-							class="service-image"
-							style="
-								background-image: url(&quot;img/service_tiles/Light_Fixture_Cleaning.png&quot;);
-								background-size: cover;
-								background-position: center;
-							"
-						></div>
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🍂</span>
+						</div>
 						<div class="service-content">
-							<h3>Light Fixture Cleaning</h3>
+							<h3>Gutter Cleaning</h3>
 							<p>
-								Keep lighting fixtures sparkling and operating efficiently. Safe
-								handling of all fixture types.
+								Prevent water damage with thorough gutter cleaning. Keep
+								your drainage system flowing freely year-round.
+							</p>
+							<a href="#contact" class="service-link">Learn More →</a>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">✨</span>
+						</div>
+						<div class="service-content">
+							<h3>Glass Restoration</h3>
+							<p>
+								Bring cloudy or stained glass back to life. Remove hard water
+								stains, oxidation, and scratches for crystal-clear results.
+							</p>
+							<a href="#contact" class="service-link">Learn More →</a>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🏗️</span>
+						</div>
+						<div class="service-content">
+							<h3>High Rise Repairs and Inspections</h3>
+							<p>
+								Specialized high-rise facade inspections and repairs. Certified
+								teams with full safety compliance for tall buildings.
+							</p>
+							<a href="#contact" class="service-link">Learn More →</a>
+						</div>
+					</div>
+					<div class="service-card">
+						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
+							<span style="font-size:60px;">🚛</span>
+						</div>
+						<div class="service-content">
+							<h3>Bucket Truck Services</h3>
+							<p>
+								Safe, efficient aerial access for hard-to-reach areas. Our
+								bucket truck fleet handles elevated exterior work with precision.
 							</p>
 							<a href="#contact" class="service-link">Learn More →</a>
 						</div>
@@ -2032,11 +2314,10 @@
 				<!-- Right: full-bleed image with floating feature card -->
 				<div class="why-right">
 					<div class="why-image-wrap">
-						<div class="why-image">
-							<img
-								src="img/why_choose_us.jpg"
-								alt="Professional window cleaning team at work"
-							/>
+						<div class="why-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);">
+							<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;z-index:1;">
+								<div style="font-size:100px;opacity:0.15;">🪟</div>
+							</div>
 						</div>
 						<!-- Floating card with 6 features -->
 						<div class="features-card">
@@ -2310,17 +2591,13 @@
 				<div class="gallery-grid">
 					<div class="gallery-item">
 						<div class="gallery-comparison">
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
 								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/Before_Balcony.jpg" alt="Before window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
 								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/After_Balcony.jpg" alt="After window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
 						</div>
 						<div class="gallery-item-title">
@@ -2329,17 +2606,13 @@
 					</div>
 					<div class="gallery-item">
 						<div class="gallery-comparison">
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
 								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/Before_Commercial.jpg" alt="Before commercial window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
 								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/After_Commercial.jpg" alt="After commercial window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
 						</div>
 						<div class="gallery-item-title">
@@ -2348,21 +2621,17 @@
 					</div>
 					<div class="gallery-item">
 						<div class="gallery-comparison">
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
 								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/b4_glass restore.jpg" alt="Before residential window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
-							<div class="gallery-image-container">
+							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
 								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder">
-									<img src="img/before_after_gallery/b4_glass restore.jpg" alt="After residential window cleaning" />
-								</div>
+								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
 							</div>
 						</div>
 						<div class="gallery-item-title">
-							<h4>Residential Example 2</h4>
+							<h4>Glass Restoration Example</h4>
 						</div>
 					</div>
 				</div>
@@ -2375,7 +2644,7 @@
 		<!-- CTA Section -->
 		<section class="cta-section">
 			<div class="cta-content">
-				<h2>Ready for Crystal Clear Windows?</h2>
+				<h2>Ready for Prime Windows?</h2>
 				<p>Get your free quote today. No hidden fees, no surprises.</p>
 				<a href="tel:8004960744" class="btn-primary">Call (800) 496-0744</a>
 				<!-- <div class="guarantee-badge">✨ 100% Satisfaction Guarantee</div> -->
@@ -2422,21 +2691,120 @@
 					<form class="quote-form" onsubmit="handleQuoteSubmit(event)">
 						<div class="quote-form-row">
 							<div class="quote-form-field">
-								<label for="q-name">Full Name</label>
+								<label for="q-name">Full Name <span style="color:var(--primary-color)">*</span></label>
 								<input type="text" id="q-name" name="name" placeholder="John Smith" required />
 							</div>
 							<div class="quote-form-field">
-								<label for="q-phone">Phone Number</label>
+								<label for="q-phone">Phone Number <span style="color:var(--primary-color)">*</span></label>
 								<input type="tel" id="q-phone" name="phone" placeholder="(718) 555-0100" required />
 							</div>
 						</div>
 						<div class="quote-form-field">
-							<label for="q-email">Email Address</label>
+							<label for="q-email">Email Address <span style="color:var(--primary-color)">*</span></label>
 							<input type="email" id="q-email" name="email" placeholder="john@example.com" required />
 						</div>
 						<div class="quote-form-field">
-							<label for="q-message">Message / Instructions</label>
-							<textarea id="q-message" name="message" rows="4" placeholder="Tell us about your property — type of building, number of windows, any special requirements…"></textarea>
+							<label for="q-address">Building Address <span style="color:var(--text-light);font-weight:400;font-size:12px;">(optional — helps us provide a rough quote)</span></label>
+							<input type="text" id="q-address" name="address" placeholder="123 Main St, Brooklyn, NY 11201" />
+						</div>
+						<div class="quote-form-field">
+							<label for="q-type">Home or Business? <span style="color:var(--primary-color)">*</span></label>
+							<select id="q-type" name="type" required style="width:100%;padding:13px 16px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:14.5px;font-family:inherit;color:var(--text-dark);background:#fafbfc;transition:border-color 0.25s ease,box-shadow 0.25s ease;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;">
+								<option value="" disabled selected>Select one…</option>
+								<option value="home">Home</option>
+								<option value="business">Business</option>
+							</select>
+						</div>
+						<div class="quote-form-field">
+							<label for="q-source">How did you hear about us?</label>
+							<select id="q-source" name="source" style="width:100%;padding:13px 16px;border:1.5px solid #e2e8f0;border-radius:10px;font-size:14.5px;font-family:inherit;color:var(--text-dark);background:#fafbfc;transition:border-color 0.25s ease,box-shadow 0.25s ease;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;">
+								<option value="" disabled selected>Select one…</option>
+								<option value="referral-friend">Referral from a friend</option>
+								<option value="referral-business">Referral from a business</option>
+								<option value="search-engine">Internet search engine</option>
+								<option value="yellow-pages">Internet yellow pages</option>
+								<option value="mail">Mail / Postcards / Flyer</option>
+								<option value="saw-cleaner">Saw a company window cleaner</option>
+								<option value="saw-vehicle">Saw a company vehicle</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+						<div class="quote-form-field">
+							<label>Services Needed <span style="color:var(--primary-color)">*</span></label>
+							<div class="services-multiselect" id="servicesMultiselect">
+								<div class="services-multiselect-trigger" id="servicesMultiselectTrigger" onclick="msToggle(event)">
+									<div class="services-multiselect-trigger-text" id="servicesMultiselectDisplay">
+										<span class="services-multiselect-placeholder">Select all services that apply…</span>
+									</div>
+									<span class="services-multiselect-arrow">▼</span>
+								</div>
+								<div class="services-multiselect-dropdown" id="servicesMultiselectDropdown" onclick="event.stopPropagation()">
+									<div class="services-multiselect-option" data-value="Residential Window Cleaning" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🏠</span>
+										<span class="opt-label">Residential Window Cleaning</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Commercial Window Cleaning" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🏢</span>
+										<span class="opt-label">Commercial Window Cleaning</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Pressure Washing" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">💦</span>
+										<span class="opt-label">Pressure Washing</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Repair and Replacement" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🔧</span>
+										<span class="opt-label">Repair and Replacement</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Gutter Cleaning" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🍂</span>
+										<span class="opt-label">Gutter Cleaning</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Glass Restoration" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">✨</span>
+										<span class="opt-label">Glass Restoration</span>
+									</div>
+									<div class="services-multiselect-option" data-value="High Rise Repairs and Inspections" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🏗️</span>
+										<span class="opt-label">High Rise Repairs and Inspections</span>
+									</div>
+									<div class="services-multiselect-option" data-value="Bucket Truck Services" onclick="msSelect(this)">
+										<span class="opt-checkbox"></span>
+										<span class="opt-icon">🚛</span>
+										<span class="opt-label">Bucket Truck Services</span>
+									</div>
+								</div>
+							</div>
+							<input type="hidden" id="q-services" name="services" />
+						</div>
+						<div class="quote-form-field">
+							<label>Attach Files <span style="color:var(--text-light);font-weight:400;font-size:12px;">(optional — photos or videos help us quote accurately)</span></label>
+							<div class="file-upload-zone" id="fileUploadZone">
+								<input type="file" id="fileUploadInput" name="attachments" multiple
+									accept=".png,.jpg,.jpeg,.gif,.html,.mp4,.mkv,image/png,image/jpeg,image/gif,text/html,video/mp4,video/x-matroska" />
+								<div class="file-upload-title">Drag &amp; drop files here</div>
+								<div class="file-upload-subtitle">or <span>click to browse</span></div>
+								<div class="file-upload-types">
+									<span class="file-type-badge">PNG</span>
+									<span class="file-type-badge">JPG</span>
+									<span class="file-type-badge">JPEG</span>
+									<span class="file-type-badge">GIF</span>
+									<span class="file-type-badge">HTML</span>
+									<span class="file-type-badge">MP4</span>
+									<span class="file-type-badge">MKV</span>
+								</div>
+							</div>
+							<div class="file-preview-list" id="filePreviewList"></div>
+						</div>
+						<div class="quote-form-field">
+							<label for="q-message">Message <span style="color:var(--primary-color)">*</span></label>
+							<textarea id="q-message" name="message" rows="4" placeholder="Tell us about your property — type of building, number of windows, any special requirements…" required></textarea>
 						</div>
 						<button type="submit" class="quote-submit-btn">
 							<span class="quote-btn-text">Get My Free Quote</span>
@@ -2488,11 +2856,14 @@
 				<div class="footer-section">
 					<h3>Services</h3>
 					<ul>
-						<li><a href="/residential">Residential Cleaning</a></li>
-						<li><a href="/commercial">Commercial Cleaning</a></li>
-						<li><a href="/gutter-cleaning">Gutter Cleaning</a></li>
+						<li><a href="/residential">Residential Window Cleaning</a></li>
+						<li><a href="/commercial">Commercial Window Cleaning</a></li>
 						<li><a href="/pressure-washing">Pressure Washing</a></li>
+						<li><a href="/repair-replacement">Repair and Replacement</a></li>
+						<li><a href="/gutter-cleaning">Gutter Cleaning</a></li>
 						<li><a href="/glass-restoration">Glass Restoration</a></li>
+						<li><a href="/high-rise">High Rise Repairs &amp; Inspections</a></li>
+						<li><a href="/bucket-truck">Bucket Truck Services</a></li>
 					</ul>
 				</div>
 				<div class="footer-section">
@@ -2521,7 +2892,127 @@
 			</div>
 		</footer>
 
-		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+	<script>
+		/* ── Services Multi-Select ── */
+		var _msSelected = [];
+
+		function msToggle(e) {
+			e.stopPropagation();
+			if (e.target.classList && e.target.classList.contains('service-tag-remove')) {
+				msDeselect(e.target.getAttribute('data-val'));
+				return;
+			}
+			var c = document.getElementById('servicesMultiselect');
+			c.classList.toggle('open');
+		}
+
+		function msDeselect(val) {
+			_msSelected = _msSelected.filter(function(s){ return s !== val; });
+			var opt = document.querySelector('#servicesMultiselect [data-value="' + val + '"]');
+			if (opt) opt.classList.remove('selected');
+			msRender();
+		}
+
+		function msSelect(el) {
+			var val = el.getAttribute('data-value');
+			var idx = _msSelected.indexOf(val);
+			if (idx > -1) {
+				_msSelected.splice(idx, 1);
+				el.classList.remove('selected');
+			} else {
+				_msSelected.push(val);
+				el.classList.add('selected');
+			}
+			msRender();
+		}
+
+		function msRender() {
+			var display = document.getElementById('servicesMultiselectDisplay');
+			var hidden  = document.getElementById('q-services');
+			if (!display) return;
+			display.innerHTML = '';
+			if (_msSelected.length === 0) {
+				display.innerHTML = '<span class="services-multiselect-placeholder">Select all services that apply\u2026</span>';
+			} else {
+				_msSelected.forEach(function(val) {
+					var tag = document.createElement('span');
+					tag.className = 'service-tag';
+					var safe = val.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+					tag.innerHTML = val + ' <span class="service-tag-remove" data-val="' + val + '" onclick="event.stopPropagation();msDeselect(\'' + safe + '\')">\u00d7</span>';
+					display.appendChild(tag);
+				});
+			}
+			if (hidden) hidden.value = _msSelected.join(', ');
+		}
+
+		document.addEventListener('click', function(e) {
+			var c = document.getElementById('servicesMultiselect');
+			if (c && !c.contains(e.target)) c.classList.remove('open');
+		});
+
+		/* ── Drag & Drop File Upload ── */
+		document.addEventListener('DOMContentLoaded', function() {
+			var zone        = document.getElementById('fileUploadZone');
+			var input       = document.getElementById('fileUploadInput');
+			var previewList = document.getElementById('filePreviewList');
+			if (!zone || !input || !previewList) return;
+			var uploadedFiles = [];
+			var ALLOWED = ['png','jpg','jpeg','gif','html','mp4','mkv'];
+
+			function fileIcon(name) {
+				var ext = name.split('.').pop().toLowerCase();
+				if (['png','jpg','jpeg','gif'].indexOf(ext) > -1) return '🖼️';
+				if (ext === 'mp4' || ext === 'mkv') return '🎬';
+				if (ext === 'html') return '🌐';
+				return '📄';
+			}
+
+			function formatSize(bytes) {
+				if (bytes < 1024) return bytes + ' B';
+				if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+				return (bytes / 1048576).toFixed(1) + ' MB';
+			}
+
+			function isAllowed(name) {
+				return ALLOWED.indexOf(name.split('.').pop().toLowerCase()) > -1;
+			}
+
+			function renderPreviews() {
+				previewList.innerHTML = '';
+				uploadedFiles.forEach(function(f, i) {
+					var item = document.createElement('div');
+					item.className = 'file-preview-item';
+					item.innerHTML =
+						'<span class="file-preview-icon">' + fileIcon(f.name) + '</span>' +
+						'<span class="file-preview-name">' + f.name + '</span>' +
+						'<span class="file-preview-size">' + formatSize(f.size) + '</span>' +
+						'<button type="button" class="file-preview-remove" data-index="' + i + '" title="Remove">\u00d7</button>';
+					previewList.appendChild(item);
+				});
+			}
+
+			function addFiles(files) {
+				Array.prototype.forEach.call(files, function(f) {
+					if (!isAllowed(f.name)) return;
+					var dup = uploadedFiles.some(function(u){ return u.name === f.name && u.size === f.size; });
+					if (!dup) uploadedFiles.push(f);
+				});
+				renderPreviews();
+			}
+
+			input.addEventListener('change', function() { addFiles(this.files); this.value = ''; });
+			zone.addEventListener('dragover',  function(e) { e.preventDefault(); zone.classList.add('drag-over'); });
+			zone.addEventListener('dragleave', function(e) { if (!zone.contains(e.relatedTarget)) zone.classList.remove('drag-over'); });
+			zone.addEventListener('drop',      function(e) { e.preventDefault(); zone.classList.remove('drag-over'); addFiles(e.dataTransfer.files); });
+			previewList.addEventListener('click', function(e) {
+				var btn = e.target.closest('.file-preview-remove');
+				if (!btn) return;
+				uploadedFiles.splice(parseInt(btn.dataset.index, 10), 1);
+				renderPreviews();
+			});
+		});
+	</script>
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 			// Mobile menu toggle
 			const mobileToggle = document.getElementById("mobileToggle");
 			const navMenu = document.getElementById("navMenu");
