@@ -346,32 +346,39 @@
 
 			/* Hero Section */
 			.hero {
-				padding-top: 125px;
-				background:
-					linear-gradient(135deg, #1E1E1E 0%, #111111 100%),
-					url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1600&q=80");
-				background-size: cover;
-				background-position: center;
-				background-attachment: fixed;
-				color: var(--white);
+				padding-top: 185px;
 				padding-bottom: 100px;
 				position: relative;
 				overflow: hidden;
+				color: var(--white);
+				min-height: 680px;
 			}
 
-			.hero::before {
+			/* Full-width background image */
+			.hero-bg {
+				position: absolute;
+				inset: 0;
+				background: url("img/main page.jpg") right top / auto 100% no-repeat;
+				background-color: #1E1E1E;
+				z-index: 0;
+			}
+
+			/* Gradient overlay: original dark tones on left fading to transparent */
+			.hero-bg::after {
 				content: "";
 				position: absolute;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				background: radial-gradient(
-					ellipse at 20% 50%,
-					rgba(201, 162, 39, 0.1) 0%,
-					transparent 50%
+				inset: 0;
+				background: linear-gradient(
+					to right,
+					#1E1E1E 0%,
+					#1E1E1E 20%,
+					rgba(30, 30, 30, 0.95) 35%,
+					rgba(30, 30, 30, 0.80) 48%,
+					rgba(30, 30, 30, 0.55) 58%,
+					rgba(30, 30, 30, 0.25) 70%,
+					rgba(30, 30, 30, 0.05) 82%,
+					transparent 100%
 				);
-				pointer-events: none;
 			}
 
 			.hero-content {
@@ -603,7 +610,7 @@
 
 			.services-grid {
 				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 				gap: 35px;
 			}
 
@@ -625,10 +632,22 @@
 
 			.service-image {
 				height: 220px;
-				background-size: cover;
-				background-position: center;
 				position: relative;
 				overflow: hidden;
+				background: #1a1a1a;
+			}
+
+			.service-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				display: block;
+				transition: transform 0.4s ease;
+			}
+
+			.service-card:hover .service-image img {
+				transform: scale(1.05);
 			}
 
 			.service-image::after {
@@ -640,9 +659,11 @@
 				bottom: 0;
 				background: linear-gradient(
 					180deg,
-					transparent 60%,
-					rgba(0, 0, 0, 0.2)
+					transparent 50%,
+					rgba(0, 0, 0, 0.25)
 				);
+				pointer-events: none;
+				z-index: 1;
 			}
 
 			.service-content {
@@ -2118,6 +2139,8 @@
 
 		<!-- Hero Section -->
 		<section id="hero" class="hero">
+			<!-- Full-width background photo -->
+			<div class="hero-bg"></div>
 			<div class="hero-content">
 				<div class="hero-text">
 					<h1>Prime <span>Windows</span> for a Perfect View</h1>
@@ -2144,12 +2167,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="hero-image" style="display:flex;align-items:center;justify-content:center;background:rgba(201,162,39,0.08);border:2px solid rgba(201,162,39,0.2);">
-					<div style="text-align:center;color:rgba(255,255,255,0.6);">
-						<div style="font-size:80px;margin-bottom:16px;">🪟</div>
-						<div style="font-size:16px;font-weight:600;letter-spacing:1px;text-transform:uppercase;">Prime Window Cleaning</div>
-					</div>
-				</div>
+				<!-- Right column intentionally empty — the photo shows through the gradient -->
+				<div></div>
 			</div>
 		</section>
 
@@ -2181,8 +2200,8 @@
 				</div>
 				<div class="services-grid">
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🏠</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Residential_Window_Cleaning.JPG" alt="Residential Window Cleaning">
 						</div>
 						<div class="service-content">
 							<h3>Residential Window Cleaning</h3>
@@ -2194,8 +2213,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🏢</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Commercial_Window_Cleaning.JPG" alt="Commercial Window Cleaning">
 						</div>
 						<div class="service-content">
 							<h3>Commercial Window Cleaning</h3>
@@ -2207,8 +2226,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">💦</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Pressure_Washing.png" alt="Pressure Washing">
 						</div>
 						<div class="service-content">
 							<h3>Pressure Washing</h3>
@@ -2220,8 +2239,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🔧</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Repair_and_Replacement.png" alt="Repair and Replacement">
 						</div>
 						<div class="service-content">
 							<h3>Repair and Replacement</h3>
@@ -2233,8 +2252,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🍂</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Gutter_Cleaning.jpg" alt="Gutter Cleaning">
 						</div>
 						<div class="service-content">
 							<h3>Gutter Cleaning</h3>
@@ -2246,8 +2265,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">✨</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Glass_Restoration.png" alt="Glass Restoration">
 						</div>
 						<div class="service-content">
 							<h3>Glass Restoration</h3>
@@ -2259,8 +2278,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🏗️</span>
+						<div class="service-image">
+							<img src="img/service_tiles/High_Rise_Repairs_and_Inspections.png" alt="High Rise Repairs and Inspections">
 						</div>
 						<div class="service-content">
 							<h3>High Rise Repairs and Inspections</h3>
@@ -2272,8 +2291,8 @@
 						</div>
 					</div>
 					<div class="service-card">
-						<div class="service-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);display:flex;align-items:center;justify-content:center;">
-							<span style="font-size:60px;">🚛</span>
+						<div class="service-image">
+							<img src="img/service_tiles/Bucket_Truck_Services.jpg" alt="Bucket Truck Services">
 						</div>
 						<div class="service-content">
 							<h3>Bucket Truck Services</h3>
