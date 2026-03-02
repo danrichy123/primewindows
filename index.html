@@ -602,7 +602,7 @@
 
 			.section-header p {
 				font-size: 18px;
-				color: var(--text-light);
+				color: var(--text-light); 
 				max-width: 700px;
 				margin: 0 auto;
 				line-height: 1.8;
@@ -1960,20 +1960,46 @@
 				margin: 0 auto;
 			}
 
-			.gallery-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-				gap: 40px;
+			/* Carousel wrapper */
+			.gallery-carousel-wrapper {
+				position: relative;
 				margin-top: 80px;
 			}
 
+			.gallery-grid {
+				display: flex;
+				gap: 40px;
+				overflow-x: auto;
+				scroll-snap-type: x mandatory;
+				-webkit-overflow-scrolling: touch;
+				scrollbar-width: none;
+				-ms-overflow-style: none;
+				padding-bottom: 8px;
+				cursor: grab;
+				user-select: none;
+			}
+
+			.gallery-grid::-webkit-scrollbar { display: none; }
+			.gallery-grid.dragging { cursor: grabbing; scroll-snap-type: none; }
+
 			.gallery-item {
+				flex: 0 0 calc(33.333% - 28px);
+				min-width: 320px;
+				scroll-snap-align: start;
 				background: var(--white);
 				border-radius: 16px;
 				overflow: hidden;
 				box-shadow: var(--shadow-md);
 				transition: all 0.3s ease;
 				border: 1px solid #e2e8f0;
+			}
+
+			@media (max-width: 1100px) {
+				.gallery-item { flex: 0 0 calc(50% - 20px); }
+			}
+
+			@media (max-width: 700px) {
+				.gallery-item { flex: 0 0 88vw; }
 			}
 
 			.gallery-item:hover {
@@ -1998,12 +2024,39 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				cursor: zoom-in;
+				transition: transform 0.2s ease;
+			}
+
+			.gallery-image-container:hover {
+				transform: scale(1.02);
 			}
 
 			.gallery-image-container img {
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
+				pointer-events: none;
+			}
+
+			.gallery-zoom-hint {
+				position: absolute;
+				bottom: 10px;
+				right: 10px;
+				background: rgba(0,0,0,0.55);
+				color: #fff;
+				font-size: 11px;
+				font-weight: 600;
+				padding: 4px 9px;
+				border-radius: 20px;
+				pointer-events: none;
+				opacity: 0;
+				transition: opacity 0.2s ease;
+				z-index: 11;
+			}
+
+			.gallery-image-container:hover .gallery-zoom-hint {
+				opacity: 1;
 			}
 
 			.gallery-image-placeholder {
@@ -2011,6 +2064,7 @@
 				font-size: 14px;
 				font-weight: 600;
 				text-align: center;
+				cursor: default;
 			}
 
 			.gallery-label {
@@ -2024,6 +2078,7 @@
 				font-size: 12px;
 				font-weight: 700;
 				z-index: 10;
+				pointer-events: none;
 			}
 
 			.gallery-item-title {
@@ -2037,6 +2092,103 @@
 				color: var(--secondary-color);
 				font-weight: 700;
 				margin: 0;
+			}
+
+			/* Gallery carousel nav */
+			.gallery-carousel-nav {
+				display: flex;
+				justify-content: center;
+				gap: 16px;
+				margin-top: 32px;
+			}
+
+			.gallery-carousel-dots {
+				display: flex;
+				justify-content: center;
+				gap: 10px;
+				margin-top: 16px;
+			}
+
+			/* Lightbox */
+			.gallery-lightbox {
+				display: none;
+				position: fixed;
+				inset: 0;
+				background: rgba(0,0,0,0.92);
+				z-index: 99999;
+				align-items: center;
+				justify-content: center;
+				animation: lbFadeIn 0.25s ease;
+			}
+
+			.gallery-lightbox.active {
+				display: flex;
+			}
+
+			@keyframes lbFadeIn {
+				from { opacity: 0; }
+				to   { opacity: 1; }
+			}
+
+			.gallery-lightbox-img {
+				max-width: 90vw;
+				max-height: 88vh;
+				border-radius: 12px;
+				box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+				animation: lbZoomIn 0.3s cubic-bezier(0.34,1.56,0.64,1);
+				object-fit: contain;
+			}
+
+			@keyframes lbZoomIn {
+				from { transform: scale(0.7); opacity: 0; }
+				to   { transform: scale(1);   opacity: 1; }
+			}
+
+			.gallery-lightbox-close {
+				position: fixed;
+				top: 22px;
+				right: 28px;
+				background: rgba(255,255,255,0.12);
+				border: 2px solid rgba(255,255,255,0.25);
+				color: #fff;
+				font-size: 26px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background 0.2s;
+				line-height: 1;
+			}
+
+			.gallery-lightbox-close:hover {
+				background: rgba(255,255,255,0.25);
+			}
+
+			.gallery-lightbox-label {
+				position: fixed;
+				top: 26px;
+				left: 50%;
+				transform: translateX(-50%);
+				background: linear-gradient(135deg, var(--primary-color), #B8911F);
+				color: var(--secondary-color);
+				font-size: 13px;
+				font-weight: 700;
+				padding: 7px 20px;
+				border-radius: 20px;
+			}
+
+			.gallery-lightbox-placeholder {
+				max-width: 500px;
+				padding: 60px 40px;
+				background: rgba(255,255,255,0.06);
+				border-radius: 16px;
+				color: rgba(255,255,255,0.5);
+				font-size: 18px;
+				font-weight: 600;
+				text-align: center;
 			}
 
 			@media (max-width: 640px) {
@@ -2336,6 +2488,7 @@
 						<div class="why-image" style="background:linear-gradient(135deg,#1E1E1E 0%,#2d2d2d 100%);">
 							<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;z-index:1;">
 								<div style="font-size:100px;opacity:0.15;">🪟</div>
+							<img src ="img/why_choose_us.jpg" alt="Prime Window Cleaning Team at Work" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.75);border-radius:16px;">
 							</div>
 						</div>
 						<!-- Floating card with 6 features -->
@@ -2607,58 +2760,79 @@
 					<h2>See the Difference</h2>
 					<p>Real before and after transformations from satisfied customers</p>
 				</div>
-				<div class="gallery-grid">
-					<div class="gallery-item">
-						<div class="gallery-comparison">
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
-								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+				<div class="gallery-carousel-wrapper">
+					<div class="gallery-grid" id="galleryCarousel">
+						<div class="gallery-item">
+							<div class="gallery-comparison">
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);" data-label="BEFORE" data-title="Residential Example 1 — Before">
+									<span class="gallery-label">BEFORE</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);" data-label="AFTER" data-title="Residential Example 1 — After">
+									<span class="gallery-label">AFTER</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
 							</div>
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
-								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+							<div class="gallery-item-title">
+								<h4>Residential Example 1</h4>
 							</div>
 						</div>
-						<div class="gallery-item-title">
-							<h4>Residential Example 1</h4>
+						<div class="gallery-item">
+							<div class="gallery-comparison">
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);" data-label="BEFORE" data-title="Commercial Example — Before">
+									<span class="gallery-label">BEFORE</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);" data-label="AFTER" data-title="Commercial Example — After">
+									<span class="gallery-label">AFTER</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
+							</div>
+							<div class="gallery-item-title">
+								<h4>Commercial Example</h4>
+							</div>
+						</div>
+						<div class="gallery-item">
+							<div class="gallery-comparison">
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);" data-label="BEFORE" data-title="Glass Restoration — Before">
+									<span class="gallery-label">BEFORE</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
+								<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);" data-label="AFTER" data-title="Glass Restoration — After">
+									<span class="gallery-label">AFTER</span>
+									<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
+									<span class="gallery-zoom-hint">🔍 Click to expand</span>
+								</div>
+							</div>
+							<div class="gallery-item-title">
+								<h4>Glass Restoration Example</h4>
+							</div>
 						</div>
 					</div>
-					<div class="gallery-item">
-						<div class="gallery-comparison">
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
-								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
-							</div>
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
-								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
-							</div>
-						</div>
-						<div class="gallery-item-title">
-							<h4>Commercial Example</h4>
-						</div>
+					<div class="gallery-carousel-nav">
+						<button class="carousel-btn" id="galleryPrevBtn" aria-label="Previous">&#8592;</button>
+						<button class="carousel-btn" id="galleryNextBtn" aria-label="Next">&#8594;</button>
 					</div>
-					<div class="gallery-item">
-						<div class="gallery-comparison">
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#1E1E1E,#2d2d2d);">
-								<span class="gallery-label">BEFORE</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
-							</div>
-							<div class="gallery-image-container" style="background:linear-gradient(135deg,#2d2d2d,#1E1E1E);">
-								<span class="gallery-label">AFTER</span>
-								<div class="gallery-image-placeholder" style="color:rgba(255,255,255,0.4);">Photo Coming Soon</div>
-							</div>
-						</div>
-						<div class="gallery-item-title">
-							<h4>Glass Restoration Example</h4>
-						</div>
-					</div>
+					<div class="gallery-carousel-dots" id="galleryDots"></div>
 				</div>
 				<div style="text-align: center; margin-top: 60px">
 					<a href="" class="btn-primary">View More Gallery</a>
 				</div>
 			</div>
 		</section>
+
+		<!-- Lightbox -->
+		<div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
+			<span class="gallery-lightbox-label" id="lightboxLabel"></span>
+			<button class="gallery-lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+			<img class="gallery-lightbox-img" id="lightboxImg" src="" alt="" style="display:none;" />
+			<div class="gallery-lightbox-placeholder" id="lightboxPlaceholder" style="display:none;"></div>
+		</div>
 
 		<!-- CTA Section -->
 		<section class="cta-section">
@@ -3097,26 +3271,29 @@
 				});
 			}, observerOptions);
 
-			// Testimonials Carousel
-			(function() {
-				const carousel = document.getElementById('testimonialsCarousel');
-				const prevBtn = document.getElementById('prevBtn');
-				const nextBtn = document.getElementById('nextBtn');
-				const dotsContainer = document.getElementById('carouselDots');
-				const cards = carousel.querySelectorAll('.testimonial-card');
+			// ── Generic Carousel Factory ──
+			function initCarousel(carouselId, prevId, nextId, dotsId, cardSelector, gap) {
+				const carousel = document.getElementById(carouselId);
+				const prevBtn  = document.getElementById(prevId);
+				const nextBtn  = document.getElementById(nextId);
+				const dotsContainer = dotsId ? document.getElementById(dotsId) : null;
+				if (!carousel || !prevBtn || !nextBtn) return;
+				const cards = carousel.querySelectorAll(cardSelector);
+				if (!cards.length) return;
 				let currentIndex = 0;
 
-				// Build dots
-				cards.forEach((_, i) => {
-					const dot = document.createElement('button');
-					dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-					dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
-					dot.addEventListener('click', () => scrollToCard(i));
-					dotsContainer.appendChild(dot);
-				});
+				if (dotsContainer) {
+					cards.forEach((_, i) => {
+						const dot = document.createElement('button');
+						dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+						dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+						dot.addEventListener('click', () => scrollToCard(i));
+						dotsContainer.appendChild(dot);
+					});
+				}
 
 				function getCardWidth() {
-					return cards[0].offsetWidth + 28;
+					return cards[0].getBoundingClientRect().width + gap;
 				}
 
 				function scrollToCard(index) {
@@ -3126,6 +3303,7 @@
 				}
 
 				function updateDots() {
+					if (!dotsContainer) return;
 					dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
 						dot.classList.toggle('active', i === currentIndex);
 					});
@@ -3153,12 +3331,64 @@
 					scrollLeft = carousel.scrollLeft;
 				});
 				carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('dragging'); });
-				carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('dragging'); });
+				carousel.addEventListener('mouseup',    () => { isDown = false; carousel.classList.remove('dragging'); });
 				carousel.addEventListener('mousemove', e => {
 					if (!isDown) return;
 					e.preventDefault();
 					carousel.scrollLeft = scrollLeft - (e.pageX - carousel.offsetLeft - startX) * 1.5;
 				});
+			}
+
+			// Testimonials Carousel
+			initCarousel('testimonialsCarousel', 'prevBtn', 'nextBtn', 'carouselDots', '.testimonial-card', 28);
+
+			// Gallery Carousel
+			initCarousel('galleryCarousel', 'galleryPrevBtn', 'galleryNextBtn', 'galleryDots', '.gallery-item', 40);
+
+			// ── Gallery Lightbox ──
+			(function() {
+				const lightbox     = document.getElementById('galleryLightbox');
+				const lbImg        = document.getElementById('lightboxImg');
+				const lbLabel      = document.getElementById('lightboxLabel');
+				const lbClose      = document.getElementById('lightboxClose');
+				const lbPlaceholder= document.getElementById('lightboxPlaceholder');
+
+				function openLightbox(container) {
+					const img   = container.querySelector('img');
+					const label = (container.getAttribute('data-label') || '') + (container.closest('.gallery-item') ? '  —  ' + container.closest('.gallery-item').querySelector('h4').textContent : '');
+					lbLabel.textContent = container.getAttribute('data-label') || '';
+
+					if (img && img.src) {
+						lbImg.src = img.src;
+						lbImg.alt = img.alt || label;
+						lbImg.style.display = 'block';
+						lbPlaceholder.style.display = 'none';
+					} else {
+						lbImg.style.display = 'none';
+						lbPlaceholder.style.display = 'block';
+						lbPlaceholder.textContent = container.querySelector('.gallery-image-placeholder') ? container.querySelector('.gallery-image-placeholder').textContent : 'Photo Coming Soon';
+					}
+					lightbox.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				}
+
+				function closeLightbox() {
+					lightbox.classList.remove('active');
+					document.body.style.overflow = '';
+					lbImg.src = '';
+				}
+
+				// Click on any gallery image container (with real img OR placeholder)
+				document.getElementById('galleryCarousel').addEventListener('click', e => {
+					const container = e.target.closest('.gallery-image-container');
+					if (!container) return;
+					// Don't open if it was a drag
+					openLightbox(container);
+				});
+
+				lbClose.addEventListener('click', closeLightbox);
+				lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+				document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 			})();
 
 
