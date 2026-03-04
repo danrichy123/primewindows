@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --primary-color:#C9A227;
+      --primary-dark:#B8911F;
+      --secondary-color:#1E1E1E;
+      --text-dark:#1E1E1E;
+      --text-light:#64748b;
+      --bg-light:#f8fafc;
+      --white:#ffffff;
+      --shadow-sm:0 2px 8px rgba(0,0,0,.08);
+      --shadow-md:0 4px 16px rgba(0,0,0,.1);
+      --shadow-lg:0 20px 40px rgba(0,0,0,.12);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;color:var(--text-dark);overflow-x:hidden;background:var(--white);}
+
+    /* ── HEADER ── */
+    header{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:var(--shadow-sm);z-index:1000;transition:all .3s ease;}
+    header.scrolled{box-shadow:var(--shadow-md);}
+    .header-top{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);padding:10px 0;font-size:13px;letter-spacing:.5px;}
+    .header-top-content{max-width:1400px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center;color:var(--white);}
+    .header-contact{display:flex;gap:35px;align-items:center;}
+    .header-contact a{color:rgba(255,255,255,.9);text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .3s ease;font-weight:500;}
+    .header-contact a:hover{color:var(--primary-color);transform:translateX(2px);}
+    .social-links{display:flex;gap:15px;align-items:center;}
+    .social-links a{color:rgba(255,255,255,.8);transition:all .3s ease;font-weight:600;font-size:14px;text-decoration:none;}
+    .social-links a:hover{color:var(--primary-color);transform:scale(1.1);}
+        nav{max-width:1400px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;overflow:visible;}
+    .logo{font-size:26px;font-weight:800;letter-spacing:-.8px;color:var(--secondary-color);text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .logo img{height:52px;width:auto;display:block;}
+    .nav-menu{display:flex;list-style:none;gap:clamp(8px,1.4vw,28px);align-items:center;flex-wrap:nowrap;}
+    .nav-menu a{color:var(--secondary-color);text-decoration:none;font-weight:600;transition:all .3s ease;position:relative;font-size:clamp(12px,1.1vw,14px);white-space:nowrap;}
+    .nav-menu a:hover{color:var(--primary-color);}
+    .nav-menu a:not(.cta-btn)::after{content:"";position:absolute;width:0;height:3px;bottom:-8px;left:0;background:linear-gradient(90deg,var(--primary-color),#B8911F);transition:width .3s ease;border-radius:2px;}
+    .nav-menu a:not(.cta-btn):hover::after{width:100%;}
+    .cta-btn{background:linear-gradient(135deg,var(--primary-color),#B8911F);color:var(--secondary-color)!important;padding:10px 22px;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s ease;border:none;cursor:pointer;font-size:13px;letter-spacing:.3px;box-shadow:0 4px 15px rgba(201,162,39,.25);white-space:nowrap;flex-shrink:0;}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,162,39,.35);}
+    .cta-btn::after{display:none!important;}
+    .mobile-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:8px;border-radius:8px;border:2px solid #e2e8f0;background:var(--white);transition:all .3s ease;flex-shrink:0;}
+    .mobile-toggle:hover{border-color:var(--primary-color);background:#fdf8ec;}
+    .mobile-toggle span{width:22px;height:2px;background:var(--secondary-color);transition:.3s;display:block;border-radius:2px;}
+    .mobile-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .mobile-toggle.active span:nth-child(2){opacity:0;}
+    .mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+    /* Dropdown */
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-toggle{display:flex;align-items:center;gap:5px;cursor:pointer;}
+    .nav-arrow{font-size:11px;transition:transform .25s ease;display:inline-block;}
+    .nav-dropdown:hover .nav-arrow,.nav-dropdown.open .nav-arrow{transform:rotate(180deg);}
+    .nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.15);min-width:270px;padding:10px 0;z-index:9999;list-style:none;border:1px solid #f0f0f0;animation:dropdownFadeIn .2s ease;}
+    @keyframes dropdownFadeIn{from{opacity:0;transform:translateX(-50%) translateY(-8px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+    .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu li a{display:block;padding:11px 22px;font-size:14px;font-weight:600;color:var(--text-dark)!important;transition:background .15s,color .15s;white-space:nowrap;}
+    .nav-dropdown-menu li a::after{display:none!important;}
+    .nav-dropdown-menu li a:hover{background:linear-gradient(135deg,rgba(201,162,39,.08),rgba(184,145,31,.05));color:var(--primary-color)!important;}
+    .nav-dropdown-menu li+li{border-top:1px solid #f5f5f5;}
+
+    /* ── SERVICE HERO ── */
+    .service-hero{padding-top:160px;padding-bottom:80px;position:relative;overflow:hidden;color:var(--white);min-height:520px;display:flex;align-items:center;}
+    .service-hero-bg{position:absolute;inset:0;background:#1E1E1E;z-index:0;}
+    .service-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(30,30,30,.97) 0%,rgba(30,30,30,.75) 60%,rgba(30,30,30,.4) 100%);}
+    .service-hero-content{max-width:1400px;margin:0 auto;padding:0 30px;position:relative;z-index:1;}
+    .service-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--primary-color);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+    .service-hero-eyebrow::before{content:"✦";font-size:10px;}
+    .service-hero h1{font-size:58px;font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:20px;}
+    .service-hero h1 span{background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .service-hero p{font-size:19px;color:rgba(255,255,255,.88);line-height:1.8;max-width:680px;margin-bottom:36px;}
+    .hero-btns{display:flex;gap:18px;flex-wrap:wrap;}
+    .btn-primary{background:linear-gradient(135deg,var(--primary-color),#B8911F);color:var(--secondary-color);padding:16px 46px;border-radius:50px;text-decoration:none;font-weight:700;font-size:16px;transition:all .3s ease;display:inline-block;box-shadow:0 8px 20px rgba(201,162,39,.3);}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(201,162,39,.4);}
+    .btn-outline{background:rgba(255,255,255,.1);color:var(--white);padding:16px 46px;border-radius:50px;text-decoration:none;font-weight:700;font-size:16px;transition:all .3s ease;display:inline-block;border:2px solid rgba(255,255,255,.3);backdrop-filter:blur(5px);}
+    .btn-outline:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);transform:translateY(-3px);}
+
+    /* ── PAGE CONTENT WRAPPER ── */
+    .page-main{max-width:1400px;margin:0 auto;padding:80px 30px;}
+
+    /* ── INTRO SECTION ── */
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-bottom:100px;}
+    .intro-text .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--primary-color);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+    .intro-text .eyebrow::before{content:"✦";font-size:10px;}
+    .intro-text h2{font-size:42px;font-weight:800;letter-spacing:-1px;color:var(--secondary-color);line-height:1.2;margin-bottom:22px;}
+    .intro-text h2 span{background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .intro-text p{color:var(--text-light);font-size:16px;line-height:1.85;margin-bottom:16px;}
+    .intro-image{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);height:440px;background:#1E1E1E;position:relative;}
+    .intro-image img{width:100%;height:100%;object-fit:cover;}
+    .intro-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:.12;}
+
+    /* ── HIGHLIGHTS CARDS ── */
+    .highlights{background:#f8fafc;padding:80px 0;margin-bottom:0;}
+    .highlights-inner{max-width:1400px;margin:0 auto;padding:0 30px;}
+    .section-header{text-align:center;margin-bottom:60px;}
+    .section-header h2{font-size:42px;font-weight:800;letter-spacing:-1px;color:var(--secondary-color);margin-bottom:16px;}
+    .section-header p{font-size:17px;color:var(--text-light);max-width:650px;margin:0 auto;line-height:1.8;}
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;}
+    .highlight-card{background:var(--white);border-radius:18px;padding:36px 30px;border:1px solid #f0f0f0;box-shadow:var(--shadow-sm);transition:all .3s ease;}
+    .highlight-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--primary-color);}
+    .card-icon{width:56px;height:56px;background:linear-gradient(135deg,var(--primary-color),#B8911F);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;box-shadow:0 6px 16px rgba(201,162,39,.25);}
+    .highlight-card h3{font-size:20px;font-weight:700;color:var(--secondary-color);margin-bottom:10px;}
+    .highlight-card p{color:var(--text-light);font-size:14.5px;line-height:1.75;}
+
+    /* ── PROCESS STRIP ── */
+    .process-strip{background:linear-gradient(135deg,#111111 0%,#1E1E1E 100%);padding:80px 0;}
+    .process-strip-inner{max-width:1400px;margin:0 auto;padding:0 30px;}
+    .process-strip .section-header h2{color:#fff;}
+    .process-strip .section-header p{color:rgba(255,255,255,.65);}
+    .steps-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;margin-top:60px;}
+    .step{text-align:center;}
+    .step-num{width:72px;height:72px;background:linear-gradient(135deg,var(--primary-color),#B8911F);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:26px;font-weight:800;color:#1E1E1E;box-shadow:0 10px 28px rgba(201,162,39,.28);transition:transform .3s,box-shadow .3s;}
+    .step:hover .step-num{transform:translateY(-5px) scale(1.05);box-shadow:0 18px 38px rgba(201,162,39,.4);}
+    .step h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:8px;}
+    .step p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.75;}
+
+    /* ── CTA BANNER ── */
+    .cta-banner{background:linear-gradient(135deg,#1E1E1E 0%,#111 100%);padding:90px 30px;text-align:center;color:var(--white);}
+    .cta-banner h2{font-size:42px;font-weight:800;letter-spacing:-1px;margin-bottom:18px;}
+    .cta-banner p{font-size:18px;color:rgba(255,255,255,.85);margin-bottom:36px;line-height:1.75;}
+
+    /* ── FOOTER ── */
+    footer{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);color:var(--white);padding:60px 20px 30px;}
+    .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:50px;margin-bottom:40px;}
+    .footer-section h3{font-size:20px;margin-bottom:20px;font-weight:700;color:var(--white);}
+    .footer-section ul{list-style:none;}
+    .footer-section ul li{margin-bottom:12px;}
+    .footer-section a{color:rgba(255,255,255,.8);text-decoration:none;transition:all .3s ease;font-size:15px;}
+    .footer-section a:hover{color:var(--primary-color);}
+    .footer-bottom{max-width:1400px;margin:0 auto;padding-top:30px;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.6);font-size:14px;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:968px){
+      .nav-menu{position:fixed;left:-100%;top:125px;flex-direction:column;background:var(--white);width:100%;text-align:center;transition:.3s;box-shadow:var(--shadow-md);padding:30px 0;gap:20px;}
+      .nav-menu.active{left:0;}
+      .mobile-toggle{display:flex;}
+      .nav-dropdown-menu{position:static;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:#f8fafc;display:none;animation:none;}
+      .nav-dropdown.open .nav-dropdown-menu{display:block;}
+      .nav-dropdown-menu li a{padding:10px 30px;color:var(--text-light)!important;}
+      .service-hero h1{font-size:38px;}
+      .intro-grid{grid-template-columns:1fr;gap:40px;}
+      .page-main{padding:60px 20px;}
+      .header-top-content{flex-direction:column;gap:10px;}
+      .header-contact{flex-direction:column;gap:10px;}
+    }
+    @media(max-width:640px){
+      .service-hero h1{font-size:30px;}
+      .section-header h2{font-size:32px;}
+      .cta-banner h2{font-size:30px;}
+    }
+  
+    @media (max-width: 968px) {
+      .nav-menu{position:fixed;left:-100%;top:125px;flex-direction:column;background:var(--white);width:100%;text-align:center;transition:.3s;box-shadow:var(--shadow-md);padding:30px 0;gap:20px;z-index:999;}
+      .nav-menu.active{left:0;}
+      .mobile-toggle{display:flex;}
+      .nav-dropdown-menu{position:static;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:#f8fafc;display:none;animation:none;}
+      .nav-dropdown.open .nav-dropdown-menu{display:block;}
+      .nav-dropdown-menu li a{padding:10px 30px;font-size:14px;color:var(--text-light)!important;}
+      .nav-dropdown-menu li+li{border-top:1px solid #eee;}
+      .header-top-content{flex-direction:column;gap:10px;}
+      .header-contact{flex-direction:column;gap:10px;}
+    }
+    </style>
+</head>
+<body>
+  <title>About Us | Prime Window Cleaning NYC</title>
+
+  <!-- Header -->
+  <header id="siteHeader">
+    <div class="header-top">
+      <div class="header-top-content">
+        <div class="header-contact">
+          <a href="tel:8004960744">📞 (800) 496-0744</a>
+          <a href="/cdn-cgi/l/email-protection#1b72757d745b6b6972767e6c72757f746c78777e7a7572757c35787476">✉️ <span class="__cf_email__" data-cfemail="81e8efe7eec1f1f3e8ece4f6e8efe5eef6e2ede4e0efe8efe6afe2eeec">[email&#160;protected]</span></a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/pages/Prime-Window-Cleaning-NYC/252204731506815" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://twitter.com/Prime_Windows" target="_blank" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+    </div>
+        <nav>
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="Prime Window Cleaning Co." style="height:52px;width:auto;display:block;" /></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+        <li class="nav-dropdown">
+          <a href="index.html#services" class="nav-dropdown-toggle">Our Services <span class="nav-arrow">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="Residential_Window_Cleaning.html">🏠 Residential Window Cleaning</a></li>
+            <li><a href="Commercial_Window_Cleaning.html">🏢 Commercial Window Cleaning</a></li>
+            <li><a href="Pressure_Washing.html">💦 Pressure Washing</a></li>
+            <li><a href="Repair_and_Replacement.html">🔧 Repair &amp; Replacement</a></li>
+            <li><a href="Gutter_Cleaning.html">🍂 Gutter Cleaning</a></li>
+            <li><a href="Glass_Restoration.html">✨ Glass Restoration</a></li>
+            <li><a href="High_Rise_and_Inspections.html">🏗️ High Rise &amp; Inspections</a></li>
+            <li><a href="Bucket_Truck_Services.html">🚛 Bucket Truck Services</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#why-us">Why Choose Us</a></li>
+        <li><a href="Service_Areas.html">Service Areas</a></li>
+        <li><a href="Pricing.html">Pricing</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Contact_Us.html">Contact Us</a></li>
+        <li><a href="Contact_Us.html" class="cta-btn">Get Free Quote</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="service-hero-bg"></div>
+    <div class="service-hero-content">
+      <div class="service-hero-eyebrow">Our Story</div>
+      <h1>New York's Window Cleaning <span>Experts Since 2002</span></h1>
+      <p>More than two decades of professional service, thousands of satisfied customers, and an unwavering commitment to quality. Meet the team behind Prime Window Cleaning NYC.</p>
+      <div class="hero-btns">
+        <a href="index.html#contact" class="btn-primary">Get Free Quote</a>
+        <a href="tel:8004960744" class="btn-outline">Call (800) 496-0744</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <div class="page-main">
+    <div class="intro-grid">
+      <div class="intro-text">
+        <div class="eyebrow">About Prime Window Cleaning</div>
+        <h2>Built on Quality. <span>Driven by Results.</span></h2>
+        <p>Since 2002, Prime Window Cleaning NYC has been raising the bar for residential and commercial window washing across Brooklyn and New York City. From day one, we knew that simply hanging a shingle wouldn't be enough — so we set out to build something genuinely different.</p>
+        <p>That commitment drove us to invest in the finest equipment, hire only the most skilled technicians, and develop a service culture obsessed with exceeding expectations. Whether we're polishing the windows of a cozy brownstone or tackling a towering Manhattan high-rise, our standard never wavers: the cleanest windows in the city, period.</p>
+        <br/>
+        <a href="index.html#contact" class="btn-primary" style="margin-top:8px;">Request a Free Quote →</a>
+      </div>
+      <div class="intro-image">
+        <div class="intro-image-placeholder">🏆</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Highlights -->
+  <section class="highlights">
+    <div class="highlights-inner">
+      <div class="section-header">
+        <h2>What's Included</h2>
+        <p>Everything you need for a professional, worry-free experience from start to finish.</p>
+      </div>
+      <div class="cards-grid">
+          <div class="highlight-card">
+            <div class="card-icon">📅</div>
+            <h3>22+ Years of Service</h3>
+            <p>Founded in 2002, Prime Window Cleaning has built a legacy of excellence across New York City.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="card-icon">👥</div>
+            <h3>5,000+ Happy Customers</h3>
+            <p>From individual homeowners to major commercial property managers — we serve them all.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="card-icon">⭐</div>
+            <h3>5.0 Star Rating</h3>
+            <p>Consistently top-rated across Google, Yelp, and homeowner review platforms.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="card-icon">🛡️</div>
+            <h3>Fully Insured & Certified</h3>
+            <p>Licensed, bonded, and insured for residential, commercial, and high-rise work.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="card-icon">🌿</div>
+            <h3>Eco-Friendly Approach</h3>
+            <p>Biodegradable cleaning solutions that protect your family and the environment.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="card-icon">💯</div>
+            <h3>Satisfaction Guarantee</h3>
+            <p>Every job backed by our 100% satisfaction guarantee — we make it right, always.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process-strip">
+    <div class="process-strip-inner">
+      <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Simple, transparent, and professional every step of the way.</p>
+      </div>
+      <div class="steps-row">
+          <div class="step">
+            <div class="step-num">📞</div>
+            <h3>Easy Contact</h3>
+            <p>Call, email, or request online — our team responds fast.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">🔍</div>
+            <h3>Free Assessment</h3>
+            <p>We assess your property and provide a detailed, no-obligation estimate.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">🧹</div>
+            <h3>Expert Service</h3>
+            <p>Our trained team delivers pristine results using professional equipment.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">✅</div>
+            <h3>Guaranteed Results</h3>
+            <p>We inspect our work with you and stand behind every job we complete.</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <h2>Ready to Experience Prime?</h2>
+    <p>Join thousands of satisfied NYC customers. Request your free quote today.</p>
+    <a href="index.html#contact" class="btn-primary">Get My Free Quote</a>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Prime Window Cleaning</h3>
+        <p style="color:rgba(255,255,255,.8);line-height:1.8;font-size:14px;">NYC's premier window cleaning experts since 2002. Serving Brooklyn, Manhattan, Queens, Bronx, and Staten Island.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html#services">Our Services</a></li>
+          <li><a href="index.html#why-us">Why Choose Us</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="Residential_Window_Cleaning.html">Residential Window Cleaning</a></li>
+          <li><a href="Commercial_Window_Cleaning.html">Commercial Window Cleaning</a></li>
+          <li><a href="Pressure_Washing.html">Pressure Washing</a></li>
+          <li><a href="Repair_and_Replacement.html">Repair and Replacement</a></li>
+          <li><a href="Gutter_Cleaning.html">Gutter Cleaning</a></li>
+          <li><a href="Glass_Restoration.html">Glass Restoration</a></li>
+          <li><a href="High_Rise_and_Inspections.html">High Rise &amp; Inspections</a></li>
+          <li><a href="Bucket_Truck_Services.html">Bucket Truck Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><a href="tel:8004960744">📞 (800) 496-0744</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#f1989f979eb18183989c9486989f959e86929d94909f989f96df929e9c">✉️ <span class="__cf_email__" data-cfemail="f29b9c949db282809b9f97859b9c969d85919e97939c9b9c95dc919d9f">[email&#160;protected]</span></a></li>
+          <li style="color:rgba(255,255,255,.8);">📍 155 34th St, Brooklyn, NY 11232</li>
+          <li style="color:rgba(255,255,255,.8);">🕒 Mon–Fri 8AM–6PM | Sat 9AM–6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Prime Window Cleaning NYC. All rights reserved. |
+        <a href="/privacy" style="color:inherit;">Privacy Policy</a> |
+        <a href="/terms" style="color:inherit;">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Mobile menu
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle && mobileToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+    document.querySelectorAll('.nav-menu a:not(.nav-dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', () => navMenu.classList.remove('active'));
+    });
+    // Header scroll
+    const hdr = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      hdr && hdr.

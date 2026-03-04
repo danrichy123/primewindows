@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Window Cleaning Prices NYC | Free Estimates | Prime Window Cleaning</title>
+  <meta name="description" content="Competitive window cleaning prices in NYC. Sample pricing for residential and commercial windows. Free estimates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    :root{
+      --primary-color:#C9A227;--primary-dark:#B8911F;--secondary-color:#1E1E1E;
+      --text-dark:#1E1E1E;--text-light:#64748b;--bg-light:#f8fafc;--white:#ffffff;
+      --shadow-sm:0 2px 8px rgba(0,0,0,.08);--shadow-md:0 4px 16px rgba(0,0,0,.1);--shadow-lg:0 20px 40px rgba(0,0,0,.12);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6;color:var(--text-dark);overflow-x:hidden;background:var(--white);}
+    header{position:fixed;top:0;width:100%;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:var(--shadow-sm);z-index:1000;transition:all .3s ease;}
+    header.scrolled{box-shadow:var(--shadow-md);}
+    .header-top{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);padding:10px 0;font-size:13px;letter-spacing:.5px;}
+    .header-top-content{max-width:1400px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center;color:var(--white);}
+    .header-contact{display:flex;gap:35px;align-items:center;}
+    .header-contact a{color:rgba(255,255,255,.9);text-decoration:none;display:flex;align-items:center;gap:8px;transition:all .3s ease;font-weight:500;}
+    .header-contact a:hover{color:var(--primary-color);transform:translateX(2px);}
+    .social-links{display:flex;gap:15px;align-items:center;}
+    .social-links a{color:rgba(255,255,255,.8);transition:all .3s ease;font-weight:600;font-size:14px;text-decoration:none;}
+    .social-links a:hover{color:var(--primary-color);transform:scale(1.1);}
+    nav{max-width:1400px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;overflow:visible;}
+    .logo{font-size:26px;font-weight:800;letter-spacing:-.8px;color:var(--secondary-color);text-decoration:none;display:flex;align-items:center;gap:8px;}
+    .logo img{height:52px;width:auto;display:block;}
+    .nav-menu{display:flex;list-style:none;gap:clamp(8px,1.4vw,28px);align-items:center;flex-wrap:nowrap;}
+    .nav-menu a{color:var(--secondary-color);text-decoration:none;font-weight:600;transition:all .3s ease;position:relative;font-size:clamp(12px,1.1vw,14px);white-space:nowrap;}
+    .nav-menu a:hover{color:var(--primary-color);}
+    .nav-menu a:not(.cta-btn)::after{content:"";position:absolute;width:0;height:3px;bottom:-8px;left:0;background:linear-gradient(90deg,var(--primary-color),#B8911F);transition:width .3s ease;border-radius:2px;}
+    .nav-menu a:not(.cta-btn):hover::after{width:100%;}
+    .cta-btn{background:linear-gradient(135deg,var(--primary-color),#B8911F);color:var(--secondary-color)!important;padding:10px 22px;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s ease;border:none;cursor:pointer;font-size:13px;letter-spacing:.3px;box-shadow:0 4px 15px rgba(201,162,39,.25);white-space:nowrap;flex-shrink:0;}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,162,39,.35);}
+    .cta-btn::after{display:none!important;}
+    .mobile-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:8px;border-radius:8px;border:2px solid #e2e8f0;background:var(--white);transition:all .3s ease;flex-shrink:0;}
+    .mobile-toggle:hover{border-color:var(--primary-color);background:#fdf8ec;}
+    .mobile-toggle span{width:22px;height:2px;background:var(--secondary-color);transition:.3s;display:block;border-radius:2px;}
+    .mobile-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .mobile-toggle.active span:nth-child(2){opacity:0;}
+    .mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .nav-dropdown{position:relative;}
+    .nav-dropdown-toggle{display:flex;align-items:center;gap:5px;cursor:pointer;}
+    .nav-arrow{font-size:11px;transition:transform .25s ease;display:inline-block;}
+    .nav-dropdown:hover .nav-arrow,.nav-dropdown.open .nav-arrow{transform:rotate(180deg);}
+    .nav-dropdown-menu{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);background:#fff;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,.15);min-width:270px;padding:10px 0;z-index:9999;list-style:none;border:1px solid #f0f0f0;animation:dropdownFadeIn .2s ease;}
+    @keyframes dropdownFadeIn{from{opacity:0;transform:translateX(-50%) translateY(-8px);}to{opacity:1;transform:translateX(-50%) translateY(0);}}
+    .nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block;}
+    .nav-dropdown-menu li a{display:block;padding:11px 22px;font-size:14px;font-weight:600;color:var(--text-dark)!important;transition:background .15s,color .15s;white-space:nowrap;}
+    .nav-dropdown-menu li a::after{display:none!important;}
+    .nav-dropdown-menu li a:hover{background:linear-gradient(135deg,rgba(201,162,39,.08),rgba(184,145,31,.05));color:var(--primary-color)!important;}
+    .nav-dropdown-menu li+li{border-top:1px solid #f5f5f5;}
+    @media(max-width:968px){
+      .nav-menu{position:fixed;left:-100%;top:125px;flex-direction:column;background:var(--white);width:100%;text-align:center;transition:.3s;box-shadow:var(--shadow-md);padding:30px 0;gap:20px;z-index:999;}
+      .nav-menu.active{left:0;}
+      .mobile-toggle{display:flex;}
+      .nav-dropdown-menu{position:static;transform:none;box-shadow:none;border:none;border-radius:0;padding:0;background:#f8fafc;display:none;animation:none;}
+      .nav-dropdown.open .nav-dropdown-menu{display:block;}
+      .nav-dropdown-menu li a{padding:10px 30px;font-size:14px;color:var(--text-light)!important;}
+      .nav-dropdown-menu li+li{border-top:1px solid #eee;}
+      .header-top-content{flex-direction:column;gap:10px;}
+      .header-contact{flex-direction:column;gap:10px;}
+    }
+    /* shared utilities */
+    .service-hero{padding-top:160px;padding-bottom:80px;position:relative;overflow:hidden;color:var(--white);min-height:420px;display:flex;align-items:center;}
+    .service-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);z-index:0;}
+    .service-hero-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(201,162,39,.08) 0%,transparent 70%);}
+    .service-hero-content{max-width:1400px;margin:0 auto;padding:0 30px;position:relative;z-index:1;}
+    .service-hero-eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--primary-color);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;}
+    .service-hero-eyebrow::before{content:"✦";font-size:10px;}
+    .service-hero h1{font-size:52px;font-weight:800;letter-spacing:-1.5px;line-height:1.15;margin-bottom:16px;}
+    .service-hero h1 span{background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .service-hero p{font-size:18px;color:rgba(255,255,255,.85);line-height:1.8;max-width:640px;margin-bottom:32px;}
+    .hero-btns{display:flex;gap:18px;flex-wrap:wrap;}
+    .btn-primary{background:linear-gradient(135deg,var(--primary-color),#B8911F);color:var(--secondary-color);padding:14px 40px;border-radius:50px;text-decoration:none;font-weight:700;font-size:15px;transition:all .3s ease;display:inline-block;box-shadow:0 8px 20px rgba(201,162,39,.3);}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(201,162,39,.4);}
+    .btn-outline{background:rgba(255,255,255,.1);color:var(--white);padding:14px 40px;border-radius:50px;text-decoration:none;font-weight:700;font-size:15px;transition:all .3s ease;display:inline-block;border:2px solid rgba(255,255,255,.3);backdrop-filter:blur(5px);}
+    .btn-outline:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);transform:translateY(-3px);}
+    .section-header{text-align:center;margin-bottom:60px;}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--primary-color);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px;}
+    .eyebrow::before{content:"✦";font-size:10px;}
+    .section-header h2{font-size:42px;font-weight:800;letter-spacing:-1px;color:var(--secondary-color);margin-bottom:14px;}
+    .section-header h2 span,.highlight{background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .section-header p{font-size:17px;color:var(--text-light);max-width:620px;margin:0 auto;line-height:1.8;}
+    .page-main{max-width:1200px;margin:0 auto;padding:80px 30px;}
+    footer{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);color:var(--white);padding:70px 30px 30px;}
+    .footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:50px;margin-bottom:40px;}
+    .footer-brand p{color:rgba(255,255,255,.7);font-size:14px;line-height:1.8;margin-top:14px;max-width:300px;}
+    .footer-logo{height:48px;width:auto;margin-bottom:14px;}
+    .footer-section h3{font-size:15px;font-weight:700;color:var(--white);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--primary-color);display:inline-block;}
+    .footer-section ul{list-style:none;}
+    .footer-section ul li{margin-bottom:10px;}
+    .footer-section a{color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;transition:all .3s;}
+    .footer-section a:hover{color:var(--primary-color);}
+    .footer-bottom{max-width:1400px;margin:0 auto;padding-top:28px;border-top:1px solid rgba(255,255,255,.1);text-align:center;color:rgba(255,255,255,.55);font-size:13px;}
+    @media(max-width:640px){.service-hero h1{font-size:34px;}.section-header h2{font-size:28px;}.service-hero{padding-top:140px;}}
+    
+    .pricing-main{max-width:1100px;margin:0 auto;padding:80px 30px;}
+    .price-notice{background:rgba(201,162,39,.08);border:1.5px solid rgba(201,162,39,.3);border-radius:12px;padding:16px 22px;font-size:14px;color:var(--text-dark);margin-bottom:50px;line-height:1.7;}
+    .price-notice strong{color:var(--primary-color);}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:60px;}
+    @media(max-width:900px){.price-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:580px){.price-grid{grid-template-columns:1fr;}}
+    .price-card{background:var(--white);border:1px solid #e2e8f0;border-radius:16px;padding:28px 24px;transition:all .3s ease;display:flex;flex-direction:column;gap:12px;}
+    .price-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--primary-color);}
+    .price-card .icon{font-size:36px;}
+    .price-card h3{font-size:17px;font-weight:700;color:var(--secondary-color);}
+    .price-card .range{font-size:26px;font-weight:800;color:var(--primary-color);letter-spacing:-.5px;}
+    .price-card .unit{font-size:13px;color:var(--text-light);margin-top:-6px;}
+    .price-card p{font-size:14px;color:var(--text-light);line-height:1.7;}
+    .screens-section{background:#f8fafc;border-radius:20px;padding:48px 40px;margin-bottom:50px;border:1px solid #e2e8f0;}
+    @media(max-width:640px){.screens-section{padding:30px 22px;}}
+    .screens-section h2{font-size:28px;font-weight:800;color:var(--secondary-color);margin-bottom:20px;letter-spacing:-.5px;}
+    .screen-method{background:var(--white);border-radius:12px;padding:22px;border:1px solid #e2e8f0;margin-bottom:16px;}
+    .screen-method h4{font-size:15px;font-weight:700;color:var(--secondary-color);margin-bottom:8px;}
+    .screen-method p{font-size:14px;color:var(--text-light);line-height:1.75;}
+    .screen-price{display:inline-block;background:linear-gradient(135deg,rgba(201,162,39,.15),rgba(184,145,31,.1));color:var(--primary-color);font-weight:700;font-size:15px;padding:4px 14px;border-radius:20px;margin-top:8px;}
+    .quote-box{background:linear-gradient(135deg,#1E1E1E,#111);border-radius:20px;padding:50px 40px;text-align:center;color:var(--white);}
+    .quote-box h2{font-size:34px;font-weight:800;margin-bottom:14px;letter-spacing:-.8px;}
+    .quote-box h2 span{background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .quote-box p{color:rgba(255,255,255,.8);font-size:16px;line-height:1.8;margin-bottom:30px;max-width:560px;margin-left:auto;margin-right:auto;}
+    .quote-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+    .btn-gold{display:inline-block;background:linear-gradient(135deg,var(--primary-color),#B8911F);color:var(--secondary-color);padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:15px;transition:all .3s;box-shadow:0 6px 20px rgba(201,162,39,.3);}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(201,162,39,.4);}
+    .btn-outline-dark{display:inline-block;background:rgba(255,255,255,.1);color:var(--white);padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:700;font-size:15px;border:2px solid rgba(255,255,255,.3);transition:all .3s;}
+    .btn-outline-dark:hover{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);transform:translateY(-2px);}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="header-top-content">
+        <div class="header-contact">
+          <a href="tel:8004960744">&#128222; (800) 496-0744</a>
+          <a href="mailto:ask@primewindowcleaning.com">&#9993;&#65039; ask@primewindowcleaning.com</a>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/pages/Prime-Window-Cleaning-NYC/252204731506815" target="_blank" aria-label="Facebook">f</a>
+          <a href="https://twitter.com/Prime_Windows" target="_blank" aria-label="Twitter">&#120143;</a>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="Prime Window Cleaning Co." style="height:52px;width:auto;display:block;" /></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About_Us.html">About Us</a></li>
+        <li class="nav-dropdown">
+          <a href="index.html#services" class="nav-dropdown-toggle">Our Services <span class="nav-arrow">&#9662;</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="Residential_Window_Cleaning.html">&#127968; Residential Window Cleaning</a></li>
+            <li><a href="Commercial_Window_Cleaning.html">&#127970; Commercial Window Cleaning</a></li>
+            <li><a href="Pressure_Washing.html">&#128166; Pressure Washing</a></li>
+            <li><a href="Repair_and_Replacement.html">&#128295; Repair &amp; Replacement</a></li>
+            <li><a href="Gutter_Cleaning.html">&#127810; Gutter Cleaning</a></li>
+            <li><a href="Glass_Restoration.html">&#10024; Glass Restoration</a></li>
+            <li><a href="High_Rise_and_Inspections.html">&#127959;&#65039; High Rise &amp; Inspections</a></li>
+            <li><a href="Bucket_Truck_Services.html">&#128667; Bucket Truck Services</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#why-us">Why Choose Us</a></li>
+        <li><a href="Service_Areas.html">Service Areas</a></li>
+        <li><a href="Pricing.html">Pricing</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="Contact_Us.html">Contact Us</a></li>
+        <li><a href="Contact_Us.html" class="cta-btn">Get Free Quote</a></li>
+      </ul>
+      <div class="mobile-toggle" id="mobileToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </header>
+
+  <section class="service-hero">
+    <div class="service-hero-bg"></div>
+    <div class="service-hero-content">
+      <div class="service-hero-eyebrow">Transparent Pricing</div>
+      <h1>Window Cleaning <span>Prices &amp; Estimates</span></h1>
+      <p>Competitive, honest pricing tailored to your property. All estimates are free &mdash; call us or fill out the form for an exact quote.</p>
+      <div class="hero-btns">
+        <a href="Contact_Us.html" class="btn-primary">Get a Free Estimate</a>
+        <a href="tel:8004960744" class="btn-outline">&#128222; (800) 496-0744</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="pricing-main">
+    <div class="section-header">
+      <div class="eyebrow">Sample Pricing</div>
+      <h2>Estimated Cost for <span>Professional Window Cleaning</span></h2>
+      <p>Prices below are samples for standard window cleaning only. Regular-size windows, no A/C units, child guards, or additional services.</p>
+    </div>
+
+    <div class="price-notice">
+      <strong>Please note:</strong> These are sample price ranges for regular window cleaning only. Regular size windows without Air Conditioning units, child guards, or stoppers. No additional services included. Contact us for a precise quote for your property.
+    </div>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="icon">&#129695;</div>
+        <h3>Sliding Windows</h3>
+        <div class="range">$15 &ndash; $20</div>
+        <div class="unit">per panel</div>
+        <p>Building sliding windows that open side-to-side. Price per individual panel, inside and out.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#8597;&#65039;</div>
+        <h3>Double-Hung Windows</h3>
+        <div class="range">$22 &ndash; $35</div>
+        <div class="unit">per window</div>
+        <p>Windows that move up and down (single or double-hung style). Full inside &amp; outside cleaning.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#128306;</div>
+        <h3>French / Multi-Pane Windows</h3>
+        <div class="range">$35 &ndash; $46</div>
+        <div class="unit">per window</div>
+        <p>Regular multiple-pane windows (typically 12 panes). More labor-intensive due to frame detail.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#9744;</div>
+        <h3>Floor-to-Ceiling Panels</h3>
+        <div class="range">$12 &ndash; $18</div>
+        <div class="unit">per glass panel</div>
+        <p>Large floor-to-ceiling panel windows, priced per individual glass section.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#128683;</div>
+        <h3>Window Sets (Tilt-In + Picture)</h3>
+        <div class="range">$50 &ndash; $75</div>
+        <div class="unit">per set</div>
+        <p>A set of 3 windows (2 tilt-in plus 1 picture window). Bundled pricing for combination units.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#9723;</div>
+        <h3>Bay Windows</h3>
+        <div class="range">$12 &ndash; $18</div>
+        <div class="unit">per panel</div>
+        <p>Regular bay windows with 4&ndash;5 panels. Priced per individual glass panel within the bay.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#128682;</div>
+        <h3>French Doors</h3>
+        <div class="range">$25 &ndash; $40</div>
+        <div class="unit">per door</div>
+        <p>Glass French doors, both interior and exterior surfaces cleaned thoroughly.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#127968;</div>
+        <h3>Balcony Glass</h3>
+        <div class="range">$7 &ndash; $10</div>
+        <div class="unit">per glass panel</div>
+        <p>Balcony glass panels and railings. Priced per individual glass panel section.</p>
+      </div>
+      <div class="price-card">
+        <div class="icon">&#127970;</div>
+        <h3>Commercial &amp; High-Rise</h3>
+        <div class="range">Custom Quote</div>
+        <div class="unit">call for estimate</div>
+        <p>Office buildings, storefronts, and high-rise properties. Pricing depends on floors, access, and volume.</p>
+      </div>
+    </div>
+
+    <!-- Screens Section -->
+    <div class="screens-section">
+      <h2>&#129695; Screen Cleaning</h2>
+      <p style="color:var(--text-light);font-size:15px;margin-bottom:24px;line-height:1.8;">We always recommend washing screens during your window cleaning appointment. Two convenient methods are available:</p>
+      <div class="screen-method">
+        <h4>Method A &mdash; Full Removal &amp; Wash</h4>
+        <p>We remove screens from their tracks and wash them thoroughly inside your apartment (protecting your floors with towels) or in the backyard using a hose and brushes. After drying, we re-install them in their tracks.</p>
+        <span class="screen-price">$3 &ndash; $5 per screen</span>
+      </div>
+      <div class="screen-method">
+        <h4>Method B &mdash; In-Place Cleaning</h4>
+        <p>We wet the screen while it remains on the window, then wipe with a special dry cloth that absorbs dirt. This method is efficient, cost-effective, and requires no removal. Ideal for hard-to-reach or sealed screen installations.</p>
+        <span class="screen-price">$2 &ndash; $3 per screen</span>
+      </div>
+    </div>
+
+    <!-- CTA Box -->
+    <div class="quote-box">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:14px;">Ready to Book?</div>
+      <h2>Schedule Your <span>Free In-Home Estimate</span></h2>
+      <p>Our team will assess your property and provide an exact, no-obligation quote. Serving Brooklyn, Manhattan, Queens, Bronx, Staten Island, Long Island &amp; New Jersey since 2002.</p>
+      <div class="quote-btns">
+        <a href="Contact_Us.html" class="btn-gold">Request a Free Quote</a>
+        <a href="tel:8004960744" class="btn-outline-dark">&#128222; Call (800) 496-0744</a>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="img/logo.png" alt="Prime Window Cleaning" class="footer-logo" />
+        <p>NYC's premier window cleaning experts since 2002. Serving all five boroughs, Long Island, and New Jersey with professional residential and commercial services.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Our Services</h3>
+        <ul>
+          <li><a href="Residential_Window_Cleaning.html">Residential Window Cleaning</a></li>
+          <li><a href="Commercial_Window_Cleaning.html">Commercial Window Cleaning</a></li>
+          <li><a href="Gutter_Cleaning.html">Gutter Cleaning</a></li>
+          <li><a href="Pressure_Washing.html">Pressure Washing</a></li>
+          <li><a href="Glass_Restoration.html">Glass Restoration</a></li>
+          <li><a href="High_Rise_and_Inspections.html">High Rise &amp; Inspections</a></li>
+          <li><a href="Bucket_Truck_Services.html">Bucket Truck Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Service_Areas.html">Service Areas</a></li>
+          <li><a href="Pricing.html">Pricing</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="Contact_Us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><a href="tel:8004960744">&#128222; (800) 496-0744</a></li>
+          <li><a href="mailto:ask@primewindowcleaning.com">&#9993;&#65039; ask@primewindowcleaning.com</a></li>
+          <li style="color:rgba(255,255,255,.75);font-size:14px;">&#128205; 155 34th St, Brooklyn, NY 11232</li>
+          <li style="color:rgba(255,255,255,.75);font-size:14px;">&#128336; Mon&ndash;Fri 8AM&ndash;6PM | Sat 9AM&ndash;6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Prime Window Cleaning NYC. All rights reserved. |
+        <a href="/privacy" style="color:inherit;">Privacy Policy</a> |
+        <a href="/terms" style="color:inherit;">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+    mobileToggle && mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-menu a:not(.nav-dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      });
+    });
+    const hdr = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      hdr && hdr.classList.toggle('scrolled', window.pageYOffset > 50);
+    });
+    document.querySelectorAll('.nav-dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', e => {
+        if (window.innerWidth <= 968) {
+          e.preventDefault();
+          toggle.closest('.nav-dropdown').classList.toggle('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
