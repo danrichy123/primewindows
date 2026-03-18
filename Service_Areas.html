@@ -21,773 +21,7 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 		/>
-		<style>
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-			:root {
-				--primary-color: #c9a227;
-				--primary-dark: #b8911f;
-				--secondary-color: #1e1e1e;
-				--text-dark: #1e1e1e;
-				--text-light: #64748b;
-				--bg-light: #f8fafc;
-				--white: #ffffff;
-				--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-				--shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-				--shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
-			}
-			html {
-				scroll-behavior: smooth;
-			}
-			body {
-				font-family:
-					"Plus Jakarta Sans",
-					-apple-system,
-					BlinkMacSystemFont,
-					"Segoe UI",
-					sans-serif;
-				line-height: 1.6;
-				color: var(--text-dark);
-				overflow-x: hidden;
-				background: var(--white);
-			}
-			header {
-				position: fixed;
-				top: 0;
-				width: 100%;
-				background: rgba(255, 255, 255, 0.95);
-				backdrop-filter: blur(10px);
-				box-shadow: var(--shadow-sm);
-				z-index: 1000;
-				transition: all 0.3s ease;
-			}
-			header.scrolled {
-				box-shadow: var(--shadow-md);
-			}
-			.header-top {
-				background: linear-gradient(135deg, #1e1e1e 0%, #111111 100%);
-				padding: 10px 0;
-				font-size: 13px;
-				letter-spacing: 0.5px;
-			}
-			.header-top-content {
-				max-width: 1400px;
-				margin: 0 auto;
-				padding: 0 30px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				color: var(--white);
-			}
-			.header-contact {
-				display: flex;
-				gap: 35px;
-				align-items: center;
-			}
-			.header-contact a {
-				color: rgba(255, 255, 255, 0.9);
-				text-decoration: none;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-				transition: all 0.3s ease;
-				font-weight: 500;
-			}
-			.header-contact a:hover {
-				color: var(--primary-color);
-				transform: translateX(2px);
-			}
-			.social-links {
-				display: flex;
-				gap: 15px;
-				align-items: center;
-			}
-			.social-links a {
-				color: rgba(255, 255, 255, 0.8);
-				transition: all 0.3s ease;
-				font-weight: 600;
-				font-size: 14px;
-				text-decoration: none;
-			}
-			.social-links a:hover {
-				color: var(--primary-color);
-				transform: scale(1.1);
-			}
-			nav {
-				max-width: 1400px;
-				margin: 0 auto;
-				padding: 14px 20px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				gap: 16px;
-				overflow: visible;
-			}
-			.logo {
-				font-size: 26px;
-				font-weight: 800;
-				letter-spacing: -0.8px;
-				color: var(--secondary-color);
-				text-decoration: none;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-			.logo img {
-				height: 52px;
-				width: auto;
-				display: block;
-			}
-			.nav-menu {
-				display: flex;
-				list-style: none;
-				gap: clamp(8px, 1.4vw, 28px);
-				align-items: center;
-				flex-wrap: nowrap;
-			}
-			.nav-menu a {
-				color: var(--secondary-color);
-				text-decoration: none;
-				font-weight: 600;
-				transition: all 0.3s ease;
-				position: relative;
-				font-size: clamp(12px, 1.1vw, 14px);
-				white-space: nowrap;
-			}
-			.nav-menu a:hover {
-				color: var(--primary-color);
-			}
-			.nav-menu a:not(.cta-btn)::after {
-				content: "";
-				position: absolute;
-				width: 0;
-				height: 3px;
-				bottom: -8px;
-				left: 0;
-				background: linear-gradient(90deg, var(--primary-color), #b8911f);
-				transition: width 0.3s ease;
-				border-radius: 2px;
-			}
-			.nav-menu a:not(.cta-btn):hover::after {
-				width: 100%;
-			}
-			.cta-btn {
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				color: var(--secondary-color) !important;
-				padding: 10px 22px;
-				border-radius: 50px;
-				text-decoration: none;
-				font-weight: 700;
-				transition: all 0.3s ease;
-				border: none;
-				cursor: pointer;
-				font-size: 13px;
-				letter-spacing: 0.3px;
-				box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
-				white-space: nowrap;
-				flex-shrink: 0;
-			}
-			.cta-btn:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 8px 25px rgba(201, 162, 39, 0.35);
-			}
-			.cta-btn::after {
-				display: none !important;
-			}
-			.mobile-toggle {
-				display: none;
-				flex-direction: column;
-				cursor: pointer;
-				gap: 5px;
-				padding: 8px;
-				border-radius: 8px;
-				border: 2px solid #e2e8f0;
-				background: var(--white);
-				transition: all 0.3s ease;
-				flex-shrink: 0;
-			}
-			.mobile-toggle:hover {
-				border-color: var(--primary-color);
-				background: #fdf8ec;
-			}
-			.mobile-toggle span {
-				width: 22px;
-				height: 2px;
-				background: var(--secondary-color);
-				transition: 0.3s;
-				display: block;
-				border-radius: 2px;
-			}
-			.mobile-toggle.active span:nth-child(1) {
-				transform: translateY(7px) rotate(45deg);
-			}
-			.mobile-toggle.active span:nth-child(2) {
-				opacity: 0;
-			}
-			.mobile-toggle.active span:nth-child(3) {
-				transform: translateY(-7px) rotate(-45deg);
-			}
-			.nav-dropdown {
-				position: relative;
-			}
-			.nav-dropdown-toggle {
-				display: flex;
-				align-items: center;
-				gap: 5px;
-				cursor: pointer;
-			}
-			.nav-arrow {
-				font-size: 11px;
-				transition: transform 0.25s ease;
-				display: inline-block;
-			}
-			.nav-dropdown:hover .nav-arrow,
-			.nav-dropdown.open .nav-arrow {
-				transform: rotate(180deg);
-			}
-			.nav-dropdown-menu {
-				display: none;
-				position: absolute;
-				top: calc(100% + 14px);
-				left: 50%;
-				transform: translateX(-50%);
-				background: #fff;
-				border-radius: 14px;
-				box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-				min-width: 270px;
-				padding: 10px 0;
-				z-index: 9999;
-				list-style: none;
-				border: 1px solid #f0f0f0;
-				animation: dropdownFadeIn 0.2s ease;
-			}
-			@keyframes dropdownFadeIn {
-				from {
-					opacity: 0;
-					transform: translateX(-50%) translateY(-8px);
-				}
-				to {
-					opacity: 1;
-					transform: translateX(-50%) translateY(0);
-				}
-			}
-			.nav-dropdown:hover .nav-dropdown-menu,
-			.nav-dropdown.open .nav-dropdown-menu {
-				display: block;
-			}
-			.nav-dropdown-menu li a {
-				display: block;
-				padding: 11px 22px;
-				font-size: 14px;
-				font-weight: 600;
-				color: var(--text-dark) !important;
-				transition:
-					background 0.15s,
-					color 0.15s;
-				white-space: nowrap;
-			}
-			.nav-dropdown-menu li a::after {
-				display: none !important;
-			}
-			.nav-dropdown-menu li a:hover {
-				background: linear-gradient(
-					135deg,
-					rgba(201, 162, 39, 0.08),
-					rgba(184, 145, 31, 0.05)
-				);
-				color: var(--primary-color) !important;
-			}
-			.nav-dropdown-menu li + li {
-				border-top: 1px solid #f5f5f5;
-			}
-			@media (max-width: 968px) {
-				.nav-menu {
-					position: fixed;
-					left: -100%;
-					top: 125px;
-					flex-direction: column;
-					background: var(--white);
-					width: 100%;
-					text-align: center;
-					transition: 0.3s;
-					box-shadow: var(--shadow-md);
-					padding: 30px 0;
-					gap: 20px;
-					z-index: 999;
-				}
-				.nav-menu.active {
-					left: 0;
-				}
-				.mobile-toggle {
-					display: flex;
-				}
-				.nav-dropdown-menu {
-					position: static;
-					transform: none;
-					box-shadow: none;
-					border: none;
-					border-radius: 0;
-					padding: 0;
-					background: #f8fafc;
-					display: none;
-					animation: none;
-				}
-				.nav-dropdown.open .nav-dropdown-menu {
-					display: block;
-				}
-				.nav-dropdown-menu li a {
-					padding: 10px 30px;
-					font-size: 14px;
-					color: var(--text-light) !important;
-				}
-				.nav-dropdown-menu li + li {
-					border-top: 1px solid #eee;
-				}
-				.header-top-content {
-					flex-direction: column;
-					gap: 10px;
-				}
-				.header-contact {
-					flex-direction: column;
-					gap: 10px;
-				}
-			}
-			/* shared utilities */
-			.service-hero {
-				padding-top: 160px;
-				padding-bottom: 80px;
-				position: relative;
-				overflow: hidden;
-				color: var(--white);
-				min-height: 420px;
-				display: flex;
-				align-items: center;
-			}
-			.service-hero-bg {
-				position: absolute;
-				inset: 0;
-				background: linear-gradient(135deg, #1e1e1e 0%, #111111 100%);
-				z-index: 0;
-			}
-			.service-hero-bg::after {
-				content: "";
-				position: absolute;
-				inset: 0;
-				background: radial-gradient(
-					ellipse at 60% 50%,
-					rgba(201, 162, 39, 0.08) 0%,
-					transparent 70%
-				);
-			}
-			.service-hero-content {
-				max-width: 1400px;
-				margin: 0 auto;
-				padding: 0 30px;
-				position: relative;
-				z-index: 1;
-			}
-			.service-hero-eyebrow {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				color: var(--primary-color);
-				font-size: 12px;
-				font-weight: 700;
-				text-transform: uppercase;
-				letter-spacing: 2px;
-				margin-bottom: 16px;
-			}
-			.service-hero-eyebrow::before {
-				content: "✦";
-				font-size: 10px;
-			}
-			.service-hero h1 {
-				font-size: 52px;
-				font-weight: 800;
-				letter-spacing: -1.5px;
-				line-height: 1.15;
-				margin-bottom: 16px;
-			}
-			.service-hero h1 span {
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-			.service-hero p {
-				font-size: 18px;
-				color: rgba(255, 255, 255, 0.85);
-				line-height: 1.8;
-				max-width: 640px;
-				margin-bottom: 32px;
-			}
-			.hero-btns {
-				display: flex;
-				gap: 18px;
-				flex-wrap: wrap;
-			}
-			.btn-primary {
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				color: var(--secondary-color);
-				padding: 14px 40px;
-				border-radius: 50px;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 15px;
-				transition: all 0.3s ease;
-				display: inline-block;
-				box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
-			}
-			.btn-primary:hover {
-				transform: translateY(-3px);
-				box-shadow: 0 15px 35px rgba(201, 162, 39, 0.4);
-			}
-			.btn-outline {
-				background: rgba(255, 255, 255, 0.1);
-				color: var(--white);
-				padding: 14px 40px;
-				border-radius: 50px;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 15px;
-				transition: all 0.3s ease;
-				display: inline-block;
-				border: 2px solid rgba(255, 255, 255, 0.3);
-				backdrop-filter: blur(5px);
-			}
-			.btn-outline:hover {
-				background: rgba(255, 255, 255, 0.18);
-				border-color: rgba(255, 255, 255, 0.5);
-				transform: translateY(-3px);
-			}
-			.section-header {
-				text-align: center;
-				margin-bottom: 60px;
-			}
-			.eyebrow {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				color: var(--primary-color);
-				font-size: 12px;
-				font-weight: 700;
-				text-transform: uppercase;
-				letter-spacing: 2px;
-				margin-bottom: 12px;
-			}
-			.eyebrow::before {
-				content: "✦";
-				font-size: 10px;
-			}
-			.section-header h2 {
-				font-size: 42px;
-				font-weight: 800;
-				letter-spacing: -1px;
-				color: var(--secondary-color);
-				margin-bottom: 14px;
-			}
-			.section-header h2 span,
-			.highlight {
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-			.section-header p {
-				font-size: 17px;
-				color: var(--text-light);
-				max-width: 620px;
-				margin: 0 auto;
-				line-height: 1.8;
-			}
-			.page-main {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 80px 30px;
-			}
-			footer {
-				background: linear-gradient(135deg, #1e1e1e 0%, #111111 100%);
-				color: var(--white);
-				padding: 70px 30px 30px;
-			}
-			.footer-content {
-				max-width: 1400px;
-				margin: 0 auto;
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-				gap: 50px;
-				margin-bottom: 40px;
-			}
-			.footer-brand p {
-				color: rgba(255, 255, 255, 0.7);
-				font-size: 14px;
-				line-height: 1.8;
-				margin-top: 14px;
-				max-width: 300px;
-			}
-			.footer-logo {
-				height: 48px;
-				width: auto;
-				margin-bottom: 14px;
-			}
-			.footer-section h3 {
-				font-size: 15px;
-				font-weight: 700;
-				color: var(--white);
-				margin-bottom: 18px;
-				padding-bottom: 10px;
-				border-bottom: 2px solid var(--primary-color);
-				display: inline-block;
-			}
-			.footer-section ul {
-				list-style: none;
-			}
-			.footer-section ul li {
-				margin-bottom: 10px;
-			}
-			.footer-section a {
-				color: rgba(255, 255, 255, 0.75);
-				text-decoration: none;
-				font-size: 14px;
-				transition: all 0.3s;
-			}
-			.footer-section a:hover {
-				color: var(--primary-color);
-			}
-			.footer-bottom {
-				max-width: 1400px;
-				margin: 0 auto;
-				padding-top: 28px;
-				border-top: 1px solid rgba(255, 255, 255, 0.1);
-				text-align: center;
-				color: rgba(255, 255, 255, 0.55);
-				font-size: 13px;
-			}
-			@media (max-width: 640px) {
-				.service-hero h1 {
-					font-size: 34px;
-				}
-				.section-header h2 {
-					font-size: 28px;
-				}
-				.service-hero {
-					padding-top: 140px;
-				}
-			}
-
-			.areas-main {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 80px 30px;
-			}
-			.areas-intro {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 60px;
-				align-items: start;
-				margin-bottom: 80px;
-			}
-			@media (max-width: 800px) {
-				.areas-intro {
-					grid-template-columns: 1fr;
-				}
-			}
-			.areas-intro p {
-				color: var(--text-light);
-				font-size: 16px;
-				line-height: 1.85;
-				margin-bottom: 16px;
-			}
-			.coverage-badge {
-				display: inline-flex;
-				align-items: center;
-				gap: 8px;
-				background: linear-gradient(
-					135deg,
-					rgba(201, 162, 39, 0.12),
-					rgba(184, 145, 31, 0.08)
-				);
-				border: 1.5px solid rgba(201, 162, 39, 0.3);
-				border-radius: 50px;
-				padding: 10px 20px;
-				font-size: 14px;
-				font-weight: 700;
-				color: var(--primary-color);
-				margin-top: 8px;
-			}
-			.areas-grid {
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 24px;
-				margin-bottom: 70px;
-			}
-			@media (max-width: 900px) {
-				.areas-grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-			}
-			@media (max-width: 580px) {
-				.areas-grid {
-					grid-template-columns: 1fr;
-				}
-			}
-			.area-card {
-				background: var(--white);
-				border: 1px solid #e2e8f0;
-				border-radius: 16px;
-				padding: 28px 24px;
-				transition: all 0.3s ease;
-			}
-			.area-card:hover {
-				transform: translateY(-4px);
-				box-shadow: var(--shadow-lg);
-				border-color: var(--primary-color);
-			}
-			.area-card .icon {
-				font-size: 34px;
-				margin-bottom: 12px;
-				display: block;
-			}
-			.area-card h3 {
-				font-size: 19px;
-				font-weight: 700;
-				color: var(--secondary-color);
-				margin-bottom: 14px;
-			}
-			.area-card ul {
-				list-style: none;
-				padding: 0;
-			}
-			.area-card ul li {
-				font-size: 14px;
-				color: var(--text-light);
-				padding: 5px 0;
-				border-bottom: 1px solid #f0f0f0;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-			.area-card ul li:last-child {
-				border-bottom: none;
-			}
-			.area-card ul li::before {
-				content: "&#10003;";
-				color: var(--primary-color);
-				font-weight: 700;
-				font-size: 12px;
-			}
-			.why-grid {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 20px;
-				margin-bottom: 60px;
-			}
-			@media (max-width: 640px) {
-				.why-grid {
-					grid-template-columns: 1fr;
-				}
-			}
-			.why-card {
-				background: #f8fafc;
-				border-radius: 14px;
-				padding: 22px 24px;
-				border: 1px solid #e2e8f0;
-				display: flex;
-				gap: 16px;
-				align-items: flex-start;
-			}
-			.why-icon {
-				width: 44px;
-				height: 44px;
-				border-radius: 10px;
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				font-size: 20px;
-				flex-shrink: 0;
-			}
-			.why-card h4 {
-				font-size: 15px;
-				font-weight: 700;
-				color: var(--secondary-color);
-				margin-bottom: 6px;
-			}
-			.why-card p {
-				font-size: 14px;
-				color: var(--text-light);
-				line-height: 1.7;
-			}
-			.cta-box {
-				background: linear-gradient(135deg, #1e1e1e, #111);
-				border-radius: 20px;
-				padding: 50px 40px;
-				text-align: center;
-				color: var(--white);
-			}
-			.cta-box h2 {
-				font-size: 32px;
-				font-weight: 800;
-				margin-bottom: 14px;
-				letter-spacing: -0.6px;
-			}
-			.cta-box h2 span {
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				background-clip: text;
-			}
-			.cta-box p {
-				color: rgba(255, 255, 255, 0.8);
-				font-size: 16px;
-				line-height: 1.8;
-				margin-bottom: 28px;
-				max-width: 520px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			.cta-btns {
-				display: flex;
-				gap: 16px;
-				justify-content: center;
-				flex-wrap: wrap;
-			}
-			.btn-gold {
-				display: inline-block;
-				background: linear-gradient(135deg, var(--primary-color), #b8911f);
-				color: var(--secondary-color);
-				padding: 14px 36px;
-				border-radius: 50px;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 15px;
-				transition: all 0.3s;
-				box-shadow: 0 6px 20px rgba(201, 162, 39, 0.3);
-			}
-			.btn-gold:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 10px 28px rgba(201, 162, 39, 0.4);
-			}
-			.btn-outline-dark {
-				display: inline-block;
-				background: rgba(255, 255, 255, 0.1);
-				color: var(--white);
-				padding: 14px 36px;
-				border-radius: 50px;
-				text-decoration: none;
-				font-weight: 700;
-				font-size: 15px;
-				border: 2px solid rgba(255, 255, 255, 0.3);
-				transition: all 0.3s;
-			}
-			.btn-outline-dark:hover {
-				background: rgba(255, 255, 255, 0.18);
-				transform: translateY(-2px);
-			}
-		</style>
+		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
 		<header>
@@ -830,40 +64,14 @@
 							>Our Services <span class="nav-arrow">&#9662;</span></a
 						>
 						<ul class="nav-dropdown-menu">
-							<li>
-								<a href="Residential_Window_Cleaning.html"
-									>&#127968; Residential Window Cleaning</a
-								>
-							</li>
-							<li>
-								<a href="Commercial_Window_Cleaning.html"
-									>&#127970; Commercial Window Cleaning</a
-								>
-							</li>
-							<li>
-								<a href="Pressure_Washing.html">&#128166; Pressure Washing</a>
-							</li>
-							<li>
-								<a href="Repair_and_Replacement.html"
-									>&#128295; Repair &amp; Replacement</a
-								>
-							</li>
-							<li>
-								<a href="Gutter_Cleaning.html">&#127810; Gutter Cleaning</a>
-							</li>
-							<li>
-								<a href="Glass_Restoration.html">&#10024; Glass Restoration</a>
-							</li>
-							<li>
-								<a href="High_Rise_and_Inspections.html"
-									>&#127959;&#65039; High Rise &amp; Inspections</a
-								>
-							</li>
-							<li>
-								<a href="Bucket_Truck_Services.html"
-									>&#128667; Bucket Truck Services</a
-								>
-							</li>
+							<li><a href="Residential_Window_Cleaning.html">&#127968; Residential Window Cleaning</a></li>
+							<li><a href="Commercial_Window_Cleaning.html">&#127970; Commercial Window Cleaning</a></li>
+							<li><a href="Pressure_Washing.html">&#128166; Pressure Washing</a></li>
+							<li><a href="Repair_and_Replacement.html">&#128295; Repair &amp; Replacement</a></li>
+							<li><a href="Gutter_Cleaning.html">&#127810; Gutter Cleaning</a></li>
+							<li><a href="Glass_Restoration.html">&#10024; Glass Restoration</a></li>
+							<li><a href="High_Rise_and_Inspections.html">&#127959;&#65039; High Rise &amp; Inspections</a></li>
+							<li><a href="Bucket_Truck_Services.html">&#128667; Bucket Truck Services</a></li>
 						</ul>
 					</li>
 					<li><a href="index.html#why-us">Why Choose Us</a></li>
@@ -899,20 +107,32 @@
 		</section>
 
 		<div class="areas-main">
+			<!-- Stats Bar -->
+			<div class="area-stats">
+				<div class="area-stat-card">
+					<h3>5</h3>
+					<p>NYC Boroughs</p>
+				</div>
+				<div class="area-stat-card">
+					<h3>20+</h3>
+					<p>Years Serving NYC</p>
+				</div>
+				<div class="area-stat-card">
+					<h3>5K+</h3>
+					<p>Happy Customers</p>
+				</div>
+				<div class="area-stat-card">
+					<h3>5.0&#9733;</h3>
+					<p>Average Rating</p>
+				</div>
+			</div>
+
 			<!-- Intro -->
 			<div class="areas-intro">
 				<div>
-					<div class="eyebrow">Coverage</div>
-					<h2
-						style="
-							font-size: 38px;
-							font-weight: 800;
-							color: var(--secondary-color);
-							letter-spacing: -0.8px;
-							margin-bottom: 20px;
-						"
-					>
-						NYC, Long Island <span class="highlight">&amp; New Jersey</span>
+					<h2>
+						Complete Coverage Across
+						<span>NYC, Long Island &amp; New Jersey</span>
 					</h2>
 					<p>
 						Prime Window Cleaning NYC provides professional window cleaning and
@@ -926,137 +146,26 @@
 						&mdash; and we're always ready and willing to travel further for
 						larger projects. Call us to find out if we cover your location.
 					</p>
+					<div class="coverage-badge">
+						<i class="fa-solid fa-location-dot"></i>
+						Primary Service Area: Up to 2 hours driving distance from NYC
+					</div>
 				</div>
-				<div
-					style="
-						display: grid;
-						grid-template-columns: 1fr 1fr;
-						gap: 14px;
-						align-self: center;
-					"
-				>
-					<div
-						style="
-							background: #f8fafc;
-							border: 1px solid #e2e8f0;
-							border-radius: 14px;
-							padding: 20px;
-							text-align: center;
-						"
-					>
-						<div
-							style="
-								font-size: 32px;
-								font-weight: 800;
-								color: var(--primary-color);
-							"
-						>
-							5
-						</div>
-						<div
-							style="
-								font-size: 13px;
-								color: var(--text-light);
-								font-weight: 600;
-							"
-						>
-							NYC Boroughs
-						</div>
-					</div>
-					<div
-						style="
-							background: #f8fafc;
-							border: 1px solid #e2e8f0;
-							border-radius: 14px;
-							padding: 20px;
-							text-align: center;
-						"
-					>
-						<div
-							style="
-								font-size: 32px;
-								font-weight: 800;
-								color: var(--primary-color);
-							"
-						>
-							20+
-						</div>
-						<div
-							style="
-								font-size: 13px;
-								color: var(--text-light);
-								font-weight: 600;
-							"
-						>
-							Years Serving NYC
-						</div>
-					</div>
-					<div
-						style="
-							background: #f8fafc;
-							border: 1px solid #e2e8f0;
-							border-radius: 14px;
-							padding: 20px;
-							text-align: center;
-						"
-					>
-						<div
-							style="
-								font-size: 32px;
-								font-weight: 800;
-								color: var(--primary-color);
-							"
-						>
-							5K+
-						</div>
-						<div
-							style="
-								font-size: 13px;
-								color: var(--text-light);
-								font-weight: 600;
-							"
-						>
-							Happy Customers
-						</div>
-					</div>
-					<div
-						style="
-							background: #f8fafc;
-							border: 1px solid #e2e8f0;
-							border-radius: 14px;
-							padding: 20px;
-							text-align: center;
-						"
-					>
-						<div
-							style="
-								font-size: 32px;
-								font-weight: 800;
-								color: var(--primary-color);
-							"
-						>
-							5.0&#9733;
-						</div>
-						<div
-							style="
-								font-size: 13px;
-								color: var(--text-light);
-								font-weight: 600;
-							"
-						>
-							Average Rating
-						</div>
-					</div>
+				<div style="border-radius:20px;overflow:hidden;height:380px;background:#1E1E1E;box-shadow:var(--shadow-lg);">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3084918.426171753!2d-72.427543!3d40.967998!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25bf92b6c23c7%3A0xe5467cd093d6fea1!2sPrime%20Window%20Cleaning!5e0!3m2!1sen!2sus!4v1771700409152!5m2!1sen!2sus"
+						width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade" title="Prime Window Cleaning service area">
+					</iframe>
 				</div>
 			</div>
 
-			<!-- Areas Grid -->
+			<!-- Areas Grid - Redesigned -->
 			<div class="section-header">
-				<div class="eyebrow">Where We Work</div>
-				<h2>Our <span>Service Areas</span></h2>
+				<h2>Our <span style="background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Service Areas</span></h2>
 				<p>
 					Professional window cleaning throughout the entire New York
-					metropolitan area.
+					metropolitan area
 				</p>
 			</div>
 
@@ -1064,155 +173,210 @@
 				<div class="area-card">
 					<span class="icon">&#127961;&#65039;</span>
 					<h3>Manhattan</h3>
+					<p class="area-desc">Complete window cleaning coverage throughout Manhattan, including residential luxury buildings and commercial properties.</p>
 					<ul>
-						<li>Financial District &amp; Battery Park</li>
-						<li>Tribeca &amp; SoHo</li>
-						<li>Midtown &amp; Times Square</li>
-						<li>Upper East &amp; Upper West Side</li>
-						<li>Harlem &amp; Upper Manhattan</li>
+						<li>Downtown &mdash; Financial District, Battery Park City, Tribeca</li>
+						<li>Midtown &mdash; Times Square, Chelsea, Hell's Kitchen, Murray Hill</li>
+						<li>Upper East Side &mdash; Luxury residential &amp; commercial</li>
+						<li>Upper West Side &mdash; Residential &amp; commercial</li>
+						<li>Harlem &amp; Upper Manhattan &mdash; All building types</li>
 					</ul>
 				</div>
 				<div class="area-card">
 					<span class="icon">&#127968;</span>
 					<h3>Brooklyn</h3>
+					<p class="area-desc">Professional window cleaning services across all Brooklyn neighborhoods, from brownstones to high-rises.</p>
 					<ul>
-						<li>Williamsburg &amp; Greenpoint</li>
-						<li>DUMBO &amp; Downtown Brooklyn</li>
-						<li>Park Slope &amp; Prospect Heights</li>
-						<li>Bay Ridge &amp; Bensonhurst</li>
-						<li>Flatbush &amp; Crown Heights</li>
-						<li>All other Brooklyn neighborhoods</li>
+						<li>Williamsburg &mdash; Residential &amp; commercial properties</li>
+						<li>DUMBO &mdash; Industrial &amp; residential window cleaning</li>
+						<li>Downtown Brooklyn &mdash; Office buildings &amp; retail</li>
+						<li>Park Slope &mdash; Residential cleaning &amp; maintenance</li>
+						<li>All other Brooklyn neighborhoods &amp; communities</li>
 					</ul>
 				</div>
 				<div class="area-card">
 					<span class="icon">&#127970;</span>
 					<h3>Queens</h3>
+					<p class="area-desc">Comprehensive window cleaning services throughout Queens for all property types.</p>
 					<ul>
-						<li>Long Island City &amp; Astoria</li>
-						<li>Flushing &amp; Jamaica</li>
-						<li>Bayside &amp; Forest Hills</li>
-						<li>Jackson Heights &amp; Elmhurst</li>
-						<li>Commercial &amp; residential coverage</li>
-						<li>All Queens neighborhoods</li>
+						<li>Long Island City &mdash; Commercial &amp; residential</li>
+						<li>Astoria &mdash; Professional cleaning for all property types</li>
+						<li>Flushing &mdash; Commercial &amp; residential services</li>
+						<li>Jamaica &mdash; Complete window cleaning solutions</li>
+						<li>All Queens neighborhoods &amp; communities</li>
 					</ul>
 				</div>
 				<div class="area-card">
 					<span class="icon">&#127977;</span>
 					<h3>The Bronx</h3>
+					<p class="area-desc">Professional window cleaning in all Bronx areas for homes, apartments, and businesses.</p>
 					<ul>
-						<li>Riverdale &amp; Fieldston</li>
-						<li>Fordham &amp; Pelham Bay</li>
-						<li>Residential homes &amp; apartments</li>
-						<li>Commercial offices &amp; storefronts</li>
-						<li>Multi-unit building cleaning</li>
-						<li>All Bronx neighborhoods</li>
+						<li>Residential window cleaning for homes &amp; apartments</li>
+						<li>Commercial cleaning for businesses &amp; offices</li>
+						<li>Multi-unit building cleaning &amp; maintenance</li>
+						<li>All Bronx neighborhoods &amp; communities</li>
 					</ul>
 				</div>
 				<div class="area-card">
 					<span class="icon">&#127758;</span>
 					<h3>Staten Island</h3>
+					<p class="area-desc">Complete window cleaning coverage for Staten Island residential and commercial properties.</p>
 					<ul>
-						<li>St. George &amp; Stapleton</li>
-						<li>New Dorp &amp; Great Kills</li>
-						<li>Residential window cleaning</li>
-						<li>Commercial building services</li>
-						<li>High-rise &amp; multi-unit buildings</li>
+						<li>Residential window cleaning services</li>
+						<li>Commercial building window cleaning</li>
+						<li>High-rise &amp; multi-unit building cleaning</li>
 						<li>All Staten Island neighborhoods</li>
 					</ul>
 				</div>
 				<div class="area-card">
 					<span class="icon">&#127757;</span>
 					<h3>Long Island &amp; New Jersey</h3>
+					<p class="area-desc">Professional window cleaning services extending beyond the five boroughs.</p>
 					<ul>
-						<li>Nassau County &mdash; full coverage</li>
-						<li>Suffolk County services</li>
-						<li>Northern &amp; Central New Jersey</li>
-						<li>Residential and commercial</li>
-						<li>All within ~2 hours of Brooklyn</li>
-						<li>Larger projects &mdash; we travel further</li>
+						<li>Nassau County &mdash; Complete residential &amp; commercial coverage</li>
+						<li>Suffolk County &mdash; Professional cleaning solutions</li>
+						<li>Northern New Jersey &mdash; Professional window cleaning</li>
+						<li>Central New Jersey &mdash; Residential &amp; commercial</li>
+						<li>All communities within our service radius</li>
 					</ul>
 				</div>
 			</div>
 
 			<!-- Why Choose Us -->
 			<div class="section-header">
-				<div class="eyebrow">Why Prime?</div>
-				<h2>Local Expertise <span>Across Every Borough</span></h2>
+				<h2>Local Expertise <span style="background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Across Every Borough</span></h2>
 			</div>
 			<div class="why-grid" style="margin-bottom: 70px">
 				<div class="why-card">
 					<div class="why-icon">&#127968;</div>
-					<div>
-						<h4>Local Expertise</h4>
-						<p>
-							20+ years cleaning windows across every NYC neighborhood. We know
-							the buildings, the access challenges, and the best approach for
-							every property type.
-						</p>
-					</div>
+					<h3>Local Expertise</h3>
+					<p>
+						20+ years cleaning windows across every NYC neighborhood. We know
+						the buildings, the access challenges, and the best approach for
+						every property type.
+					</p>
 				</div>
 				<div class="why-card">
 					<div class="why-icon">&#128197;</div>
-					<div>
-						<h4>Flexible Scheduling</h4>
-						<p>
-							We work around your schedule, Monday through Saturday, to provide
-							the most convenient service times across all our service areas.
-						</p>
-					</div>
+					<h3>Flexible Scheduling</h3>
+					<p>
+						We work around your schedule, Monday through Saturday, to provide
+						the most convenient service times across all our service areas.
+					</p>
 				</div>
 				<div class="why-card">
 					<div class="why-icon">&#128274;</div>
-					<div>
-						<h4>Licensed &amp; Insured</h4>
-						<p>
-							Fully licensed and insured for residential and commercial work
-							throughout New York, New Jersey, and Long Island.
-						</p>
-					</div>
+					<h3>Licensed &amp; Insured</h3>
+					<p>
+						Fully licensed and insured for residential and commercial work
+						throughout New York, New Jersey, and Long Island.
+					</p>
 				</div>
 				<div class="why-card">
 					<div class="why-icon">&#9989;</div>
-					<div>
-						<h4>Satisfaction Guaranteed</h4>
-						<p>
-							If you're not completely satisfied with the results, we'll come
-							back and make it right. Our track record of 4.9 stars speaks for
-							itself.
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<!-- CTA -->
-			<div class="cta-box">
-				<div
-					class="eyebrow"
-					style="justify-content: center; margin-bottom: 14px"
-				>
-					Serving Your Neighborhood
-				</div>
-				<h2>Get Service in <span>Your Area</span></h2>
-				<p>
-					Call us or fill out the form to confirm we service your location and
-					get a free estimate. We respond same business day.
-				</p>
-				<div class="cta-btns">
-					<a href="Contact_Us.html" class="btn-gold">Get a Free Quote</a>
-					<a href="tel:8004960744" class="btn-outline-dark"
-						>&#128222; Call (800) 496-0744</a
-					>
+					<h3>Satisfaction Guaranteed</h3>
+					<p>
+						If you're not completely satisfied with the results, we'll come
+						back and make it right. Our track record of 4.9 stars speaks for
+						itself.
+					</p>
 				</div>
 			</div>
 		</div>
+
+		<!-- FAQ Section -->
+		<section class="faq-section alt-bg">
+			<div class="faq-content">
+				<div class="section-header">
+					<h2>Service Areas <span style="background:linear-gradient(135deg,var(--primary-color),#B8911F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">FAQ</span></h2>
+					<p>Common questions about our service coverage</p>
+				</div>
+				<div class="faq-list">
+					<div class="faq-item">
+						<button class="faq-question">
+							What areas does Prime Window Cleaning serve?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<div class="faq-answer-inner">
+								We serve all five NYC boroughs (Manhattan, Brooklyn, Queens, The Bronx, and Staten Island), as well as Long Island (Nassau and Suffolk Counties) and Northern/Central New Jersey. Our primary service area extends up to 2 hours driving distance from our Brooklyn headquarters, but we're happy to travel further for larger commercial projects.
+							</div>
+						</div>
+					</div>
+					<div class="faq-item">
+						<button class="faq-question">
+							Do you charge extra for locations outside NYC?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<div class="faq-answer-inner">
+								For locations within our standard service area (approximately 2 hours from Brooklyn), there are no additional travel charges. For projects further out, a small travel fee may apply depending on distance. We always provide a clear, upfront quote so there are no surprises.
+							</div>
+						</div>
+					</div>
+					<div class="faq-item">
+						<button class="faq-question">
+							How quickly can you schedule a service in my area?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<div class="faq-answer-inner">
+								We typically schedule services within 1&ndash;3 business days for most areas. For emergency or same-day requests, availability depends on your location and our current schedule. Brooklyn and Manhattan locations often have the fastest availability. Call us at (800) 496-0744 for same-day availability.
+							</div>
+						</div>
+					</div>
+					<div class="faq-item">
+						<button class="faq-question">
+							Do you offer services for both residential and commercial properties?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<div class="faq-answer-inner">
+								Yes! We provide both residential and commercial window cleaning services across all our service areas. Whether you have a single-family home, a multi-unit apartment building, a retail storefront, or a corporate office tower, our experienced team has the equipment and expertise to handle it.
+							</div>
+						</div>
+					</div>
+					<div class="faq-item">
+						<button class="faq-question">
+							Can you handle high-rise buildings in all service areas?
+							<span class="faq-icon">+</span>
+						</button>
+						<div class="faq-answer">
+							<div class="faq-answer-inner">
+								Yes. We have specialized high-rise equipment including bucket trucks, bosun chairs, and rope descent systems. Our team is fully certified for high-rise work and compliant with all NYC DOB safety requirements. We handle buildings of any height across all our service areas.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<div class="cta-box">
+			<h2>Get Service in Your Area</h2>
+			<p>
+				Call us or fill out the form to confirm we service your location and
+				get a free estimate. We respond same business day.
+			</p>
+			<div class="cta-btns">
+				<a href="Contact_Us.html" class="btn-gold">Get a Free Quote</a>
+				<a href="tel:8004960744" class="btn-outline-dark"
+					>&#128222; Call (800) 496-0744</a
+				>
+			</div>
+		</div>
+
 		<footer>
 			<div class="footer-content">
-				<div class="footer-brand">
-					<img
-						src="img/logo.png"
-						alt="Prime Window Cleaning"
-						class="footer-logo"
-					/>
+				<div class="footer-section">
+					<div class="footer-brand">
+						<img
+							src="img/logo.png"
+							alt="Prime Window Cleaning"
+							class="footer-logo"
+							loading="lazy"
+						/>
+					</div>
 					<p>
 						NYC's premier window cleaning experts since 2002. Serving all five
 						boroughs, Long Island, and New Jersey with professional residential
@@ -1222,27 +386,13 @@
 				<div class="footer-section">
 					<h3>Our Services</h3>
 					<ul>
-						<li>
-							<a href="Residential_Window_Cleaning.html"
-								>Residential Window Cleaning</a
-							>
-						</li>
-						<li>
-							<a href="Commercial_Window_Cleaning.html"
-								>Commercial Window Cleaning</a
-							>
-						</li>
+						<li><a href="Residential_Window_Cleaning.html">Residential Window Cleaning</a></li>
+						<li><a href="Commercial_Window_Cleaning.html">Commercial Window Cleaning</a></li>
 						<li><a href="Gutter_Cleaning.html">Gutter Cleaning</a></li>
 						<li><a href="Pressure_Washing.html">Pressure Washing</a></li>
 						<li><a href="Glass_Restoration.html">Glass Restoration</a></li>
-						<li>
-							<a href="High_Rise_and_Inspections.html"
-								>High Rise &amp; Inspections</a
-							>
-						</li>
-						<li>
-							<a href="Bucket_Truck_Services.html">Bucket Truck Services</a>
-						</li>
+						<li><a href="High_Rise_and_Inspections.html">High Rise &amp; Inspections</a></li>
+						<li><a href="Bucket_Truck_Services.html">Bucket Truck Services</a></li>
 					</ul>
 				</div>
 				<div class="footer-section">
@@ -1282,34 +432,6 @@
 				</p>
 			</div>
 		</footer>
-		<script>
-			const mobileToggle = document.getElementById("mobileToggle");
-			const navMenu = document.getElementById("navMenu");
-			mobileToggle &&
-				mobileToggle.addEventListener("click", () => {
-					navMenu.classList.toggle("active");
-					mobileToggle.classList.toggle("active");
-				});
-			document
-				.querySelectorAll(".nav-menu a:not(.nav-dropdown-toggle)")
-				.forEach((link) => {
-					link.addEventListener("click", () => {
-						navMenu.classList.remove("active");
-						mobileToggle.classList.remove("active");
-					});
-				});
-			const hdr = document.querySelector("header");
-			window.addEventListener("scroll", () => {
-				hdr && hdr.classList.toggle("scrolled", window.pageYOffset > 50);
-			});
-			document.querySelectorAll(".nav-dropdown-toggle").forEach((toggle) => {
-				toggle.addEventListener("click", (e) => {
-					if (window.innerWidth <= 968) {
-						e.preventDefault();
-						toggle.closest(".nav-dropdown").classList.toggle("open");
-					}
-				});
-			});
-		</script>
+		<script src="shared.js"></script>
 	</body>
 </html>
