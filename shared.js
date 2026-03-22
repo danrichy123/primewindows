@@ -98,4 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ── Service Card Click Navigation ──
+  document.querySelectorAll(".service-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      var link = card.querySelector(".service-link");
+      if (link && link.href) {
+        window.location.href = link.href;
+      }
+    });
+  });
+
 });
