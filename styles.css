@@ -47,7 +47,7 @@ nav{max-width:1400px;margin:0 auto;padding:14px 20px;display:flex;justify-conten
 .cta-btn::after{display:none!important;}
 
 /* Mobile Toggle (hamburger → X) */
-.mobile-toggle{display:none;flex-direction:column;cursor:pointer;gap:7px;padding:12px;border-radius:8px;border:2px solid #e2e8f0;background:var(--white);transition:all .3s ease;flex-shrink:0;position:relative;width:50px;height:50px;align-items:center;justify-content:center;}
+.mobile-toggle{display:none;flex-direction:column;cursor:pointer;gap:7px;padding:12px;border-radius:8px;border:2px solid #e2e8f0;background:var(--white);transition:all .3s ease;flex-shrink:0;position:relative;width:50px;height:50px;align-items:center;justify-content:center;z-index:1001;}
 .mobile-toggle:hover{border-color:var(--primary-color);background:#fdf8ec;}
 .mobile-toggle span{width:28px;height:3px;background:var(--secondary-color);transition:all .35s cubic-bezier(0.68, -0.55, 0.265, 1.55);display:block;border-radius:3px;transform-origin:center center;}
 .mobile-toggle.active{border-color:var(--primary-color);background:rgba(201,162,39,.08);}
@@ -141,7 +141,7 @@ footer{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);color:var(--wh
 .intro-text p{color:var(--text-light);font-size:16px;line-height:1.85;margin-bottom:16px;}
 .intro-image{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);height:440px;background:#1E1E1E;position:relative;}
 .intro-image img{width:100%;height:100%;object-fit:cover;}
-.intro-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;opacity:.12;}
+.intro-image-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:80px;}
 
 /* ── Highlights Cards ── */
 .highlights{background:#f8fafc;padding:80px 0;margin-bottom:0;}
@@ -448,7 +448,7 @@ footer{background:linear-gradient(135deg,#1E1E1E 0%,#111111 100%);color:var(--wh
 .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-bottom:80px;}
 .price-card{background:var(--white);border-radius:18px;padding:36px 28px;border:1px solid #f0f0f0;box-shadow:var(--shadow-sm);text-align:center;transition:all .3s ease;}
 .price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--primary-color);}
-.price-card .icon{font-size:36px;margin-bottom:16px;}
+.price-card .icon{display:flex;align-items:center;justify-content:center;width:64px;height:64px;margin:0 auto 24px;background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(184,145,31,.08));border-radius:12px;color:var(--primary-color);}.price-card .icon svg{width:36px;height:36px;stroke:var(--primary-color);}
 .price-card h3{font-size:20px;font-weight:700;color:var(--secondary-color);margin-bottom:10px;}
 .price-card p{font-size:14px;color:var(--text-light);line-height:1.7;margin-bottom:16px;}
 .price-card .range{font-size:26px;font-weight:800;color:var(--primary-color);margin-bottom:4px;}
