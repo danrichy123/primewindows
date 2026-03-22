@@ -108,4 +108,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ── Blog Card Click Navigation ──
+  document.querySelectorAll(".blog-card").forEach(function (card) {
+    card.addEventListener("click", function () {
+      var link = card.querySelector(".blog-read-more");
+      if (link && link.href) {
+        window.location.href = link.href;
+      }
+    });
+  });
+
+  // ── Pricing Method Box Click Navigation ──
+  document.querySelectorAll(".screen-method").forEach(function (box) {
+    box.style.cursor = "pointer";
+    box.addEventListener("click", function () {
+      window.location.href = "index.html#contact";
+    });
+  });
+
 });

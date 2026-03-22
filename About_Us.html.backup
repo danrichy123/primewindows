@@ -13,11 +13,10 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 		/>
+		<title>About Us | Prime Window Cleaning NYC</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
-		<title>Gutter Cleaning | Prime Window Cleaning NYC</title>
-
 		<!-- Header -->
 		<header id="siteHeader">
 			<div class="header-top">
@@ -25,11 +24,11 @@
 					<div class="header-contact">
 						<a href="tel:8004960744">📞 (800) 496-0744</a>
 						<a
-							href="/cdn-cgi/l/email-protection#f891969e97b8888a91959d8f91969c978f9b949d999691969fd69b9795"
+							href="/cdn-cgi/l/email-protection#1b72757d745b6b6972767e6c72757f746c78777e7a7572757c35787476"
 							>✉️
 							<span
 								class="__cf_email__"
-								data-cfemail="5930373f3619292b30343c2e30373d362e3a353c383730373e773a3634"
+								data-cfemail="81e8efe7eec1f1f3e8ece4f6e8efe5eef6e2ede4e0efe8efe6afe2eeec"
 								>[email&#160;protected]</span
 							></a
 						>
@@ -111,12 +110,12 @@
 		<section class="service-hero">
 			<div class="service-hero-bg"></div>
 			<div class="service-hero-content">
-				<div class="service-hero-eyebrow">Gutter Services</div>
-				<h1>Keep Your Gutters <span>Flowing Freely</span></h1>
+				<div class="service-hero-eyebrow">Our Story</div>
+				<h1>New York's Window Cleaning <span>Experts Since 2002</span></h1>
 				<p>
-					Professional gutter cleaning to prevent water damage, foundation
-					issues, and pest problems. Serving homes and businesses across
-					Brooklyn and New York City.
+					More than two decades of professional service, thousands of satisfied
+					customers, and an unwavering commitment to quality. Meet the team
+					behind Prime Window Cleaning NYC.
 				</p>
 				<div class="hero-btns">
 					<a href="index.html#contact" class="btn-primary">Get Free Quote</a>
@@ -129,20 +128,22 @@
 		<div class="page-main">
 			<div class="intro-grid">
 				<div class="intro-text">
-					<div class="eyebrow">Gutter Cleaning</div>
-					<h2>Protect Your Home from <span>Water Damage</span></h2>
+					<div class="eyebrow">About Prime Window Cleaning</div>
+					<h2>Built on Quality. <span>Driven by Results.</span></h2>
 					<p>
-						Clogged gutters are one of the leading causes of preventable home
-						damage. When gutters overflow, water seeps into fascia boards,
-						walls, and foundations — leading to costly structural repairs.
-						Regular gutter cleaning is the simplest way to protect your
-						property.
+						Since 2002, Prime Window Cleaning NYC has been raising the bar for
+						residential and commercial window washing across Brooklyn and New
+						York City. From day one, we knew that simply hanging a shingle
+						wouldn't be enough — so we set out to build something genuinely
+						different.
 					</p>
 					<p>
-						Our gutter cleaning team removes all debris — leaves, twigs, dirt,
-						and blockages — from gutters and downspouts. We inspect for damage
-						while we work and flush everything through to confirm clear drainage
-						before we leave.
+						That commitment drove us to invest in the finest equipment, hire
+						only the most skilled technicians, and develop a service culture
+						obsessed with exceeding expectations. Whether we're polishing the
+						windows of a cozy brownstone or tackling a towering Manhattan
+						high-rise, our standard never wavers: the cleanest windows in the
+						city, period.
 					</p>
 					<br />
 					<a
@@ -154,11 +155,7 @@
 				</div>
 				<div class="intro-image">
 					<div class="intro-image-placeholder">
-						<img
-							src="img/service_tiles/Gutter_Cleaning.jpg"
-							alt="Gutter Cleaning Service in Action"
-							loading="lazy"
-						/>
+						<img src="img/About_Us.jpg" alt="Prime Window Cleaning Team" />
 					</div>
 				</div>
 			</div>
@@ -176,51 +173,51 @@
 				</div>
 				<div class="cards-grid">
 					<div class="highlight-card">
-						<div class="card-icon">🍂</div>
-						<h3>Debris Removal</h3>
-						<p>
-							Complete removal of leaves, twigs, dirt, and buildup from all
-							gutters and channels.
-						</p>
-					</div>
-					<div class="highlight-card">
-						<div class="card-icon">💧</div>
-						<h3>Downspout Flushing</h3>
-						<p>
-							We flush every downspout to confirm unrestricted flow from gutter
-							to ground.
-						</p>
-					</div>
-					<div class="highlight-card">
-						<div class="card-icon">🔍</div>
-						<h3>Damage Inspection</h3>
-						<p>
-							We note any damaged sections, loose hangers, or problem areas
-							during the clean.
-						</p>
-					</div>
-					<div class="highlight-card">
-						<div class="card-icon">🏠</div>
-						<h3>Fascia & Soffit Check</h3>
-						<p>
-							Quick check of adjacent fascia and soffit for signs of water
-							damage or rot.
-						</p>
-					</div>
-					<div class="highlight-card">
 						<div class="card-icon">📅</div>
-						<h3>Seasonal Plans</h3>
+						<h3>22+ Years of Service</h3>
 						<p>
-							Bi-annual or quarterly plans keep gutters clean year-round at
-							reduced rates.
+							Founded in 2002, Prime Window Cleaning has built a legacy of
+							excellence across New York City.
+						</p>
+					</div>
+					<div class="highlight-card">
+						<div class="card-icon">👥</div>
+						<h3>5,000+ Happy Customers</h3>
+						<p>
+							From individual homeowners to major commercial property managers —
+							we serve them all.
+						</p>
+					</div>
+					<div class="highlight-card">
+						<div class="card-icon">⭐</div>
+						<h3>5.0 Star Rating</h3>
+						<p>
+							Consistently top-rated across Google, Yelp, and homeowner review
+							platforms.
 						</p>
 					</div>
 					<div class="highlight-card">
 						<div class="card-icon">🛡️</div>
-						<h3>Fully Insured</h3>
+						<h3>Fully Insured & Certified</h3>
 						<p>
-							All work performed by insured, experienced technicians using
-							proper safety equipment.
+							Licensed, bonded, and insured for residential, commercial, and
+							high-rise work.
+						</p>
+					</div>
+					<div class="highlight-card">
+						<div class="card-icon">🌿</div>
+						<h3>Eco-Friendly Approach</h3>
+						<p>
+							Biodegradable cleaning solutions that protect your family and the
+							environment.
+						</p>
+					</div>
+					<div class="highlight-card">
+						<div class="card-icon">💯</div>
+						<h3>Satisfaction Guarantee</h3>
+						<p>
+							Every job backed by our 100% satisfaction guarantee — we make it
+							right, always.
 						</p>
 					</div>
 				</div>
@@ -237,32 +234,31 @@
 				<div class="steps-row">
 					<div class="step">
 						<div class="step-num">📞</div>
-						<h3>Book a Service</h3>
-						<p>
-							Schedule online or call for a fast, free gutter cleaning estimate.
-						</p>
+						<h3>Easy Contact</h3>
+						<p>Call, email, or request online — our team responds fast.</p>
 					</div>
 					<div class="step">
 						<div class="step-num">🔍</div>
-						<h3>Gutter Inspection</h3>
+						<h3>Free Assessment</h3>
 						<p>
-							Technician assesses gutter condition and identifies blockages or
-							damage.
+							We assess your property and provide a detailed, no-obligation
+							estimate.
 						</p>
 					</div>
 					<div class="step">
-						<div class="step-num">🍂</div>
-						<h3>Full Clean & Flush</h3>
+						<div class="step-num">🧹</div>
+						<h3>Expert Service</h3>
 						<p>
-							All debris removed, gutters flushed, downspouts confirmed clear.
+							Our trained team delivers pristine results using professional
+							equipment.
 						</p>
 					</div>
 					<div class="step">
 						<div class="step-num">✅</div>
-						<h3>Report & Debrief</h3>
+						<h3>Guaranteed Results</h3>
 						<p>
-							We summarize findings and confirm all drainage is functioning
-							correctly.
+							We inspect our work with you and stand behind every job we
+							complete.
 						</p>
 					</div>
 				</div>
@@ -271,9 +267,9 @@
 
 		<!-- CTA -->
 		<section class="cta-banner">
-			<h2>Don't Wait for the Next Storm</h2>
+			<h2>Ready to Experience Prime?</h2>
 			<p>
-				Protect your home before the damage happens. Book your gutter cleaning
+				Join thousands of satisfied NYC customers. Request your free quote
 				today.
 			</p>
 			<a href="index.html#contact" class="btn-primary">Get My Free Quote</a>
@@ -340,11 +336,11 @@
 						<li><a href="tel:8004960744">📞 (800) 496-0744</a></li>
 						<li>
 							<a
-								href="/cdn-cgi/l/email-protection#442d2a222b0434362d2921332d2a202b33272821252a2d2a236a272b29"
+								href="/cdn-cgi/l/email-protection#f1989f979eb18183989c9486989f959e86929d94909f989f96df929e9c"
 								>✉️
 								<span
 									class="__cf_email__"
-									data-cfemail="60090e060f201012090d0517090e040f17030c05010e090e074e030f0d"
+									data-cfemail="f29b9c949db282809b9f97859b9c969d85919e97939c9b9c95dc919d9f"
 									>[email&#160;protected]</span
 								></a
 							>

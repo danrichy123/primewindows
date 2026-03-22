@@ -6,7 +6,10 @@
       "Bash(do echo:*)",
       "Read(//c/projects/primewindows/**)",
       "Bash(done)",
-      "Bash(grep -l '<style>' c:/projects/primewindows/*.html)"
+      "Bash(grep -l '<style>' c:/projects/primewindows/*.html)",
+      "Bash(grep -c Contact_Us.html /c/projects/primewindows/*.html)",
+      "Bash(grep -v \":0$\")",
+      "Bash(grep -l \"index.html#contact\" /c/projects/primewindows/*.html)"
     ]
   }
 }
